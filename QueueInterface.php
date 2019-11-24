@@ -7,7 +7,7 @@
  * @license     http://www.arikaim.com/license
  * 
 */
-namespace Arikaim\Core\Interfaces\Queue;
+namespace Arikaim\Core\Interfaces;
 
 use Arikaim\Core\Interfaces\Job\JobInterface;
 
