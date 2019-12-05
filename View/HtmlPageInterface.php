@@ -7,7 +7,7 @@
  * @license     http://www.arikaim.com/license
  * 
 */
-namespace Arikaim\Core\Interfaces;
+namespace Arikaim\Core\Interfaces\View;
 
 /**
  * Extension interface
@@ -25,41 +25,26 @@ interface HtmlPageInterface
     public function render($name, $params = [], $language = null);
 
     /**
-     * Get properties
+     * Create
      *
-     * @return Collection
+     * @param string $name
+     * @param array $params
+     * @param string|null $language
+     * @param boolean $withOptions
+     * @return use Arikaim\Core\Interfaces\View\HtmlComponentInterface;
     */
-    public function properties();
-
-    /**
-     * Load system error page.
-     *
-     * @param array $data
-     * @param string|null $language
-     * @param string|null $extension
-     * @return Response
-     */
-    public function loadSystemError($data = [], $language = null, $extension = null);
-
-    /**
-     * Load page not found error page.
-     *
-     * @param array $data
-     * @param string|null $language
-     * @param string|null $extension
-     * @return Response
-     */
-    public function loadPageNotFound($data = [], $language = null, $extension = null);
-
+    public function createHtmlComponent($name, $params = [], $language = null, $withOptions = true);
+    
     /**
      * Load page
      *
+     * @param Response $response
      * @param string $name
      * @param array|object $params
      * @param string|null $language
      * @return Response
     */
-    public function load($name, $params = [], $language = null, $response = null);
+    public function load($response, $name, $params = [], $language = null);
 
     /**
      * Get current page name

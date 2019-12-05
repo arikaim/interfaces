@@ -15,37 +15,16 @@ namespace Arikaim\Core\Interfaces;
 interface ExtensionInterface 
 {  
     /**
-     *  Executed after install extension.
-     *
-     * @return void
-     */
-    public function onAfterInstall();
-
-    /**
-     * Executed before install extension.
-     *
-     * @return void
-     */
-    public function onBeforeInstall();
-
-    /**
-     * Executed after uninstall extension.
-     *
-     * @return void
-     */
-    public function onAfterUnInstall();
-
-    /**
-     * Executed before uninstall extension.
-     *
-     * @return void
-     */
-    public function onBeforeUnInstall();
-
-    /**
      * Install extension callback
      *
      * @return mixed
      */
     public function install();
+
+    /**
+     * UnInstall extension
+     *
+     * @return boolean
+     */
+    public function unInstall();
 }

@@ -7,7 +7,7 @@
  * @license     http://www.arikaim.com/license
  * 
 */
-namespace Arikaim\Core\Interfaces;
+namespace Arikaim\Core\Interfaces\Access;
 
 /**
  * Auth interface
@@ -37,4 +37,18 @@ interface AccessInterface
      * @return array
      */
     public function resolvePermissionName($name);
+
+    /**
+     * Control panel permission name
+     *
+     * @return string
+     */
+    public function getControlPanelPermission();
+
+    /**
+     * Full Permissions 
+     *
+     * @return array
+     */
+    public function getFullPermissions();
 }

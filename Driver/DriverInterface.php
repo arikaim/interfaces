@@ -7,7 +7,7 @@
  * @license     http://www.arikaim.com/license
  * 
 */
-namespace Arikaim\Core\Interfaces;
+namespace Arikaim\Core\Interfaces\Driver;
 
 /**
  * Driver interface

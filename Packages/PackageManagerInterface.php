@@ -7,7 +7,7 @@
  * @license     http://www.arikaim.com/license
  * 
 */
-namespace Arikaim\Core\Interfaces;
+namespace Arikaim\Core\Interfaces\Packages;
 
 /**
  * Package manager interface
@@ -96,4 +96,11 @@ interface PackageManagerInterface
      * @return boolean
     */
     public function createBackup($name);
+
+    /**
+     * Get package repository
+     *
+     * @return RepositoryInterface
+     */
+    public function getRepository($packageName);
 }
