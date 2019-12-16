@@ -17,61 +17,58 @@ use Arikaim\Core\Interfaces\Job\JobInterface;
 interface QueueInterface
 {    
     /**
-     * Add job to queue
+     * Add job
      *
      * @param JobInterface $job
-     * @return boolean
-    */
-    public function add(JobInterface $job);
-    
-    /**
-     * Remove job from queue
-     *
-     * @param JobInterface $job
-     * @return boolean
-    */
-    public function remove(JobInterface $job);
-    
-    /**
-     * Execute job
-     *
-     * @param JobInterface $job
+     * @param string|null $extension
      * @return bool
     */
-    public function execute(JobInterface $job);
+    public function addJob(JobInterface $job, $extension = null);
+    
+    /**
+     * Delete job
+     *
+     * @param string|integer $id Job id, uiid
+     * @return bool
+     */
+    public function deleteJob($id);
+    
+    /**
+     * Delete all jobs
+     *    
+     * @return boolean
+     */
+    public function clear();
 
     /**
      * Get next job
-     * @return JobInterface
+     *
+     * @return JobInterface|null
      */
     public function getNext();
 
     /**
-     * Remove all jobs from queue
-     * 
-     * @param bool $completed - remove completed jobs only 
-     * @param string extension - remove extension jobs only
-     * @return void
-    */
-    public function clear($completed = true, $extension = null);
-
-    /**
-     * Get jobs list
+     * Run job
      *
-     * @param bool $recurring
-     * @param boolean $scheduled
-     * @param string $extension
-     * @return array
-    */
-    public function getJobs($recurring = false, $scheduled = false, $extension = null);
-
-    /**
-     * Return true if job exist in queue
-     *
-     * @param JobInterface $job
+     * @param JobInterface|string|integer $job
      * @return boolean
      */
-    public function hasJob(JobInterface $job);
+    public function executeJob($job);
+
+    /**
+     * Get all jobs due
+     * 
+     * @return array
+     */
+    public function getJobsDue();
+
+    /**
+     * Get jobs
+     *
+     * @param array $filter
+     * @return array
+     */
+    public function getJobs($filter = []);
 
     /**
      * Get recurring jobs
@@ -82,17 +79,18 @@ interface QueueInterface
     public function getRecuringJobs($extension = null);
 
     /**
-    * Get scheduled jobs
-    *
-    * @param string|null $v
-    * @return array
-    */
-    public function getScheduledJobs($extension = null);
+     * Create job obj from jobs queue
+     *
+     * @param string|integer $name
+     * @return JobInterface|false
+     */
+    public function create($name);
 
     /**
-     * Get all jobs due
-     * 
-     * @return array
+     * Delete jobs
+     *
+     * @param array $filter
+     * @return boolean
      */
-    public function getJobsDue();
+    public function deleteJobs($filter = []);
 }
