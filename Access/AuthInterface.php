@@ -95,7 +95,15 @@ interface AuthInterface
      * @param AuthProviderInterface|string $provider
      * @param UserProviderInterface|null $user
      * @param array $params
-     * @return AuthInterface
+     * @return AuthProviderInterface
      */
     public function withProvider($provider, $user = null, $params = []);
+
+    /**
+     * Get user permissions list
+     *
+     * @param integer|null $authId
+     * @return mixed
+     */
+    public function getUserPermissions($authId = null);
 }

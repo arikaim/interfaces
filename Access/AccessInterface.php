@@ -51,4 +51,12 @@ interface AccessInterface
      * @return array
      */
     public function getFullPermissions();
+
+    /**
+     * Get user permissions list
+     *
+     * @param integer|null $authId
+     * @return mixed
+     */
+    public function getUserPermissions($authId = null);
 }
