@@ -93,4 +93,12 @@ interface QueueInterface
      * @return boolean
      */
     public function deleteJobs($filter = []);
+
+    /**
+     * Find job by name, id or uuid
+     *
+     * @param string|integer $id Job id, uiid or name
+     * @return array|false
+     */
+    public function getJob($id);
 }
