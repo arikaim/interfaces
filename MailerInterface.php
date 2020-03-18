@@ -28,4 +28,11 @@ interface MailerInterface
      * @return string|null
      */
     public function getErrorMessage();
+
+    /**
+     * Return options
+     *
+     * @return OptionsInterface
+     */
+    public function getOptions();
 }
