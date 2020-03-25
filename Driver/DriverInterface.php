@@ -91,4 +91,12 @@ interface DriverInterface
      * @return array
      */
     public function createDriverConfig($properties);
+
+    /**
+     * Set driver options
+     *
+     * @param array $options
+     * @return void
+     */
+    public function setDriverOptions(array $options);
 }
