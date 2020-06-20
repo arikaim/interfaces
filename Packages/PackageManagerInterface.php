@@ -41,6 +41,14 @@ interface PackageManagerInterface
     public function installPackage($name);
 
     /**
+     * Run post install actions on package
+     *
+     * @param string $name
+     * @return void
+     */
+    public function postInstallPackage($name);
+
+    /**
      * Uninstall package
      *
      * @param string $name
