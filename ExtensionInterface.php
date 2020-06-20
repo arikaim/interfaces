@@ -22,6 +22,13 @@ interface ExtensionInterface
     public function install();
 
     /**
+     * Run post install actions
+     *
+     * @return void
+     */
+    public function postInstall();
+
+    /**
      * UnInstall extension
      *
      * @return void
