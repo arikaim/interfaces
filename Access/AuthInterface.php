@@ -9,10 +9,12 @@
 */
 namespace Arikaim\Core\Interfaces\Access;
 
+use Arikaim\Core\Interfaces\Access\AccessInterface;
+
 /**
  * Auth interface
  */
-interface AuthInterface
+interface AuthInterface extends AccessInterface
 {    
     /**
      * Logout
@@ -98,12 +100,4 @@ interface AuthInterface
      * @return AuthProviderInterface
      */
     public function withProvider($provider, $user = null, $params = []);
-
-    /**
-     * Get user permissions list
-     *
-     * @param integer|null $authId
-     * @return mixed
-     */
-    public function getUserPermissions($authId = null);
 }

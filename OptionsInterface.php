@@ -60,7 +60,7 @@ interface OptionsInterface
      * @param string|null $extension
      * @return bool
     */
-    public function remove($key = null, $extension = null);
+    public function removeOptions($key = null, $extension = null);
 
     /**
      * Search options

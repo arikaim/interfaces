@@ -17,11 +17,11 @@ interface StorageInterface
     /**
      * Get full file path
      *
-     * @param tring $path
+     * @param string $path
      * @param string $fileSystemName
      * @return string
      */
-    public function getFuillPath($path, $fileSystemName = 'storage');
+    public function getFullPath($path = '', $fileSystemName = 'storage');
 
     /**
      * Write files
@@ -87,4 +87,13 @@ interface StorageInterface
      * @return void
      */
     public function copy($from, $to, $dispatchEvent = true);
+
+    /**
+     * Delete directory in storage folder
+     *
+     * @param string $path
+     * @param string $fileSystemName
+     * @return boolean
+     */
+    public function deleteDir($path, $fileSystemName = 'storage');
 }

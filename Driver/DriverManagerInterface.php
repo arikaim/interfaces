@@ -26,7 +26,7 @@ interface DriverManagerInterface
       * Install driver
       *
       * @param string|object $name Driver name
-      * @param string $class full class name or driver object ref
+      * @param string|null $class full class name or driver object ref
       * @param string|null $category
       * @param string|null $title
       * @param string|null $description
@@ -35,7 +35,7 @@ interface DriverManagerInterface
       * @param string|null $extension
       * @return boolean
     */
-    public function install($name, $class, $category = null, $title = null, $description = null, $version = null, $config = [], $extension = null);
+    public function install($name, $class = null, $category = null, $title = null, $description = null, $version = null, $config = [], $extension = null);
 
     /**
      * Uninstall driver

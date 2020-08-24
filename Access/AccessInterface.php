@@ -19,17 +19,17 @@ interface AccessInterface
      *
      * @return boolean
      */
-    public function hasControlPanelAccess($authId);
+    public function hasControlPanelAccess($authId = null);
 
     /**
      * Check access 
      *
      * @param string $name Permission name
      * @param string|array $type PermissionType (read,write,execute,delete)   
-     * @param integer $authId 
+     * @param integer|null $authId 
      * @return boolean
     */
-    public function hasAccess($name, $type = null, $authId);
+    public function hasAccess($name, $type = null, $authId = null);
 
     /**
      * Resolve permission full name  name:type
@@ -56,8 +56,19 @@ interface AccessInterface
     /**
      * Get user permissions list
      *
-     * @param integer $authId
+     * @param integer|null $authId
      * @return mixed
      */
-    public function getUserPermissions($authId);
+    public function getUserPermissions($authId = null);
+
+    /**
+     * Add permission item.
+     *
+     * @param string $name    
+     * @param string|null $title
+     * @param string|null $description
+     * @param string|null $extension
+     * @return boolean
+     */
+    public function addPermission($name, $title = null, $description = null, $extension = null);
 }
