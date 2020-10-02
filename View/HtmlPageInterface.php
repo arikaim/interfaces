@@ -9,20 +9,48 @@
 */
 namespace Arikaim\Core\Interfaces\View;
 
+use  Arikaim\Core\Interfaces\View\HtmlComponentInterface;
+
 /**
  * Extension interface
  */
-interface HtmlPageInterface 
+interface HtmlPageInterface extends HtmlComponentInterface
 {  
     /**
-     * Render page
+     * Get current template name
      *
-     * @param string $name
-     * @param array $params
-     * @param string|null $language
-     * @return ComponentInterface
-    */
-    public function render($name, $params = [], $language = null);
+     * @return string|null
+     */
+    public function getCurrentTemplate();
+    
+    /**
+     * Return library files
+     *
+     * @return array
+     */
+    public function getLibraryFiles();
+
+    /**
+     * Return template files
+     *
+     * @return array
+     */
+    public function getTemplateFiles();
+
+    /**
+     * Return current css frameowrk
+     *
+     * @param string $templateName
+     * @return array
+     */
+    public function getFramework($templateName);
+
+    /**
+     * Return current page language
+     *
+     * @return string
+     */
+    public function getLanguage();
 
     /**
      * Create

@@ -15,6 +15,28 @@ namespace Arikaim\Core\Interfaces\View;
 interface ViewInterface
 {    
     /**
+     * Get templates path
+     *
+     * @return string
+     */
+    public function getTemplatesPath();
+    
+    /**
+     * Get primary template
+     *
+     * @return string
+     */
+    public function getPrimaryTemplate();
+
+    /**
+     * Set primary template
+     *
+     * @param string $templateName
+     * @return void
+     */
+    public function setPrimaryTemplate($templateName);
+    
+    /**
      * Render template
      *
      * @param string $template

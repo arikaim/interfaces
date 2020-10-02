@@ -66,4 +66,12 @@ interface EventInterface
      * @return string
      */
     public function getName();
+
+    /**
+     * Set event name
+     *
+     * @param string $name
+     * @return void
+     */
+    public function setName($name);
 }
