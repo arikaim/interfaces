@@ -76,4 +76,12 @@ interface OptionsStorageInterface
      * @return array
     */
     public function loadOptions();
+
+    /**
+     * Get extension options
+     *
+     * @param string $extensioName
+     * @return mixed
+     */
+    public function getExtensionOptions($extensioName);
 }

@@ -15,6 +15,14 @@ namespace Arikaim\Core\Interfaces\View;
 interface ViewInterface
 {    
     /**
+     * Get UI library path
+     *
+     * @param string $libraryName
+     * @return string
+    */
+    public function getLibraryPath($libraryName);
+
+    /**
      * Get templates path
      *
      * @return string

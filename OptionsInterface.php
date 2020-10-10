@@ -69,4 +69,13 @@ interface OptionsInterface
      * @return array
      */
     public function searchOptions($searchKey);
+
+    /**
+     * Get extension options
+     *
+     * @param string $extensioName
+     * @return mixed
+     */
+    public function getExtensionOptions($extensioName);
+
 }

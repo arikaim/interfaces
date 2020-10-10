@@ -30,9 +30,9 @@ interface MailerInterface
     public function getErrorMessage();
 
     /**
-     * Return options
+     * Return mailer options
      *
-     * @return OptionsInterface
+     * @return array
      */
     public function getOptions();
 }
