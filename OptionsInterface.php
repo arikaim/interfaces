@@ -66,9 +66,10 @@ interface OptionsInterface
      * Search options
      *
      * @param string $searchKey
+     * @param bool $compactKeys
      * @return array
      */
-    public function searchOptions($searchKey);
+    public function searchOptions($searchKey, $compactKeys = false);
 
     /**
      * Get extension options
@@ -77,5 +78,4 @@ interface OptionsInterface
      * @return mixed
      */
     public function getExtensionOptions($extensioName);
-
 }

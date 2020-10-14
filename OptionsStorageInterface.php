@@ -63,12 +63,13 @@ interface OptionsStorageInterface
     public function remove($key = null, $extension = null);
 
     /**
-     * Search options
+     * Search for options
      *
      * @param string $searchKey
+     * @param bool $compactKeys
      * @return array
-     */
-    public function searchOptions($searchKey);
+    */
+    public function searchOptions($searchKey, $compactKeys = false);
 
     /**
      * Load options

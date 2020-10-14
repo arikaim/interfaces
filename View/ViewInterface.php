@@ -113,4 +113,11 @@ interface ViewInterface
      * @return ExtensionInterface
      */
     public function getExtension($class);
+
+    /**
+     * Get current extension
+     *
+     * @return ExtensionInterface
+     */
+    public function getCurrentExtension();
 }
