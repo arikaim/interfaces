@@ -9,11 +9,21 @@
 */
 namespace Arikaim\Core\Interfaces;
 
+use Arikaim\Core\Interfaces\OptionsStorageInterface;;
+
 /**
  * Options interface
  */
 interface OptionsInterface
 {    
+    /**
+     * Set storage adapter
+     *
+     * @param OptionsStorageInterface $adapter
+     * @return void
+     */
+    public function setStorageAdapter(OptionsStorageInterface $adapter);
+
     /**
      * Create option, if option exists return false
      *

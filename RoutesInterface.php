@@ -14,6 +14,15 @@ namespace Arikaim\Core\Interfaces;
  */
 interface RoutesInterface
 {    
+    /**
+     * Get route
+     *
+     * @param string $method
+     * @param string $pattern
+     * @return array|false
+    */
+    public function getRoute($method, $pattern);
+
      /**
      * Get routes list for request method
      *
