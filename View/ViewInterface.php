@@ -15,6 +15,22 @@ namespace Arikaim\Core\Interfaces\View;
 interface ViewInterface
 {    
     /**
+     * Get components include files
+     *
+     * @return array
+     */
+    public function getComponentFiles();
+    
+    /**
+     * Add include file if not exists
+     *
+     * @param array $file
+     * @param string $key
+     * @return void
+     */
+    public function addIncludeFile(array $file, $key);
+
+    /**
      * Get UI library path
      *
      * @param string $libraryName

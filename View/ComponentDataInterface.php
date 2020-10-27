@@ -7,20 +7,18 @@
  * @license     http://www.arikaim.com/license
  * 
 */
-namespace Arikaim\Core\Interfaces;
+namespace Arikaim\Core\Interfaces\View;
 
 /**
  * Extension interface
  */
-interface SystemErrorInterface 
+interface ComponentDataInterface 
 {  
     /**
-     * Get error
+     * Get component data
      *
-     * @param string $errorCode
-     * @param string|null $default
      * @param array $params
-     * @return string
+     * @return array
      */
-    public function getError($errorCode, $params = [], $default = 'UNKNOWN_ERROR');
+    public function getData(array $params = []): array;
 }

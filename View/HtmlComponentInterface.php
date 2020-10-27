@@ -26,10 +26,10 @@ interface HtmlComponentInterface
      *
      * @param string $name
      * @param array $params
-     * @param string|null $language
-     * @return ComponentDataInterface
+     * @param string $language
+     * @return ComponentDescriptorInterface
     */
-    public function render($name, $params = [], $language = null);
+    public function render($name, $params = [], $language);
 
     /**
      * Return component files

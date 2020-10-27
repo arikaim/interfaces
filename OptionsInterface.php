@@ -39,12 +39,11 @@ interface OptionsInterface
      * Save option
      *
      * @param string $key
-     * @param mixed $value
-     * @param boolean $autoLoad
+     * @param mixed $value   
      * @param string $extension
      * @return bool
      */
-    public function set($key, $value, $autoLoad = false, $extension = null);
+    public function set($key, $value, $extension = null);
 
     /**
      * Get option

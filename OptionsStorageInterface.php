@@ -30,11 +30,11 @@ interface OptionsStorageInterface
      *
      * @param string $key
      * @param mixed $value
-     * @param boolean $autoLoad
      * @param string $extension
+     * @param int|null $autoLoad
      * @return bool
      */
-    public function saveOption($key, $value, $autoLoad = false, $extension = null);
+    public function saveOption($key, $value, $extension = null, $autoLoad = null);
 
     /**
      * Return true if option name exist

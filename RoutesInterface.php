@@ -15,6 +15,13 @@ namespace Arikaim\Core\Interfaces;
 interface RoutesInterface
 {    
     /**
+     * Get home page route
+     *
+     * @return array
+    */
+    public function getHomePageRoute();
+
+    /**
      * Get route
      *
      * @param string $method

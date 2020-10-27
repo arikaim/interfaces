@@ -9,13 +9,40 @@
 */
 namespace Arikaim\Core\Interfaces\View;
 
-use  Arikaim\Core\Interfaces\View\HtmlComponentInterface;
+use Arikaim\Core\Interfaces\View\HtmlComponentInterface;
 
 /**
  * Extension interface
  */
 interface HtmlPageInterface extends HtmlComponentInterface
 {  
+    /**
+     * Render application error
+     *
+     * @param array $data
+     * @param string|null $language    
+     * @return ComponentDescriptorInterface
+     */
+    public function renderApplicationError(array $data = [], $language = null);
+
+    /**
+     * Render system error(s)
+     *
+     * @param array $data
+     * @param string|null $language    
+     * @return ComponentDescriptorInterface
+     */
+    public function renderSystemError(array $data = [], $language = null);
+
+    /**
+     * Render page not found 
+     *
+     * @param array $data
+     * @param string|null $language    
+     * @return Component
+    */
+    public function renderPageNotFound(array $data = [], $language = null);
+
     /**
      * Get current template name
      *
@@ -24,26 +51,11 @@ interface HtmlPageInterface extends HtmlComponentInterface
     public function getCurrentTemplate();
     
     /**
-     * Return library files
-     *
-     * @return array
+     * Return current css framework
+     *   
+     * @return string
      */
-    public function getLibraryFiles();
-
-    /**
-     * Return template files
-     *
-     * @return array
-     */
-    public function getTemplateFiles();
-
-    /**
-     * Return current css frameowrk
-     *
-     * @param string $templateName
-     * @return array
-     */
-    public function getFramework($templateName);
+    public function getFramework();
 
     /**
      * Return current page language
@@ -64,36 +76,11 @@ interface HtmlPageInterface extends HtmlComponentInterface
     public function createHtmlComponent($name, $params = [], $language = null, $withOptions = true);
     
     /**
-     * Load page
-     *
-     * @param Response $response
-     * @param string $name
-     * @param array|object $params
-     * @param string|null $language
-     * @return Response
-    */
-    public function load($response, $name, $params = [], $language = null);
-
-    /**
-     * Get current page name
-     *
-     * @return string
-     */
-    public static function getCurrent();
-
-    /**
      * Get head properties
      *
      * @return PageHead
      */
     public function head();
-
-    /**
-     * Get page fles
-     *
-     * @return array
-    */
-    public function getPageFiles();
 
     /**
      * Get component files
