@@ -21,9 +21,10 @@ interface QueueInterface
      *
      * @param JobInterface $job
      * @param string|null $extension
+     * @param bool $disabled
      * @return bool
     */
-    public function addJob(JobInterface $job, $extension = null);
+    public function addJob(JobInterface $job, $extension = null, $disabled = false);
     
     /**
      * Delete job
