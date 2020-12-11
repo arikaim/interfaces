@@ -21,27 +21,30 @@ interface HtmlPageInterface extends HtmlComponentInterface
      *
      * @param array $data
      * @param string|null $language    
+     * @param string|null $templateName    
      * @return ComponentDescriptorInterface
      */
-    public function renderApplicationError(array $data = [], $language = null);
+    public function renderApplicationError(array $data = [], $language = null, $templateName = null);
 
     /**
      * Render system error(s)
      *
      * @param array $data
-     * @param string|null $language    
+     * @param string|null $language  
+     * @param string|null $templateName    
      * @return ComponentDescriptorInterface
      */
-    public function renderSystemError(array $data = [], $language = null);
+    public function renderSystemError(array $data = [], $language = null, $templateName = null);
 
     /**
      * Render page not found 
      *
      * @param array $data
-     * @param string|null $language    
+     * @param string|null $language 
+     * @param string|null $templateName     
      * @return Component
     */
-    public function renderPageNotFound(array $data = [], $language = null);
+    public function renderPageNotFound(array $data = [], $language = null, $templateName = null);
 
     /**
      * Get current template name
@@ -50,13 +53,6 @@ interface HtmlPageInterface extends HtmlComponentInterface
      */
     public function getCurrentTemplate();
     
-    /**
-     * Return current css framework
-     *   
-     * @return string
-     */
-    public function getFramework();
-
     /**
      * Return current page language
      *

@@ -18,7 +18,8 @@ interface ComponentDataInterface
      * Get component data
      *
      * @param array $params
+     * @param ContainerInterface|null $container
      * @return array
      */
-    public function getData(array $params = []): array;
+    public function getData(array $params = [], $container = null): array;
 }

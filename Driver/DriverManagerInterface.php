@@ -18,9 +18,11 @@ interface DriverManagerInterface
      * Create driver
      *
      * @param string $name Driver name 
+     * @param array $options  
+     * @param array|null $config Drievr config properties
      * @return DriverInterface|false
-     */
-    public function create($name);
+    */
+    public function create($name, $options = [], $config = null);
 
     /**
       * Install driver
