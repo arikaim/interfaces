@@ -87,4 +87,13 @@ interface OptionsInterface
      * @return mixed
      */
     public function getExtensionOptions($extensioName);
+
+    /**
+     * Force load option
+     *
+     * @param string $key
+     * @param mixed $default
+     * @return mixed
+     */
+    public function read(string $key, $default = null);
 }

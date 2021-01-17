@@ -48,17 +48,17 @@ interface ViewInterface
     /**
      * Get primary template
      *
-     * @return string|null
+     * @return string
      */
-    public function getPrimaryTemplate(): ?string;
+    public function getPrimaryTemplate(): string;
 
     /**
      * Set primary template
      *
-     * @param string|null $templateName
+     * @param string $templateName
      * @return void
      */
-    public function setPrimaryTemplate(?string $templateName): void;
+    public function setPrimaryTemplate(string $templateName): void;
     
     /**
      * Render template
