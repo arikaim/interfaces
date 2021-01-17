@@ -23,27 +23,27 @@ interface EventDispatcherInterface
      * @param string|null $extension
      * @return array
      */
-    public function dispatch($eventName, $event = [], $callbackOnly = false, $extension = null);
+    public function dispatch(string $eventName, $event = [], bool $callbackOnly = false, ?string $extension = null): array;
 
     /**
      * Register event subscriber.
      *
      * @param string $class
-     * @param string $extension
+     * @param string|null $extension
      * @return bool
      */
-    public function registerSubscriber($class, $extension);
+    public function registerSubscriber(string $class, ?string $extension): bool;
 
     /**
      * Add event to events db table.
      *
      * @param string $name
-     * @param string $title
-     * @param string $extension
-     * @param string $description
+     * @param string"null $title
+     * @param string|null $extension
+     * @param string|null $description
      * @return bool
      */
-    public function registerEvent($name, $title, $extension = null, $description = null);
+    public function registerEvent(string $name, ?string $title, ?string $extension = null, ?string $description = null): bool;
 
     /**
      * Subscribe callback
@@ -53,5 +53,5 @@ interface EventDispatcherInterface
      * @param boolean $single
      * @return void
      */
-    public function subscribeCallback($eventName, $callback, $single = false);
+    public function subscribeCallback(string $eventName, $callback, bool $single = false): void;
 }

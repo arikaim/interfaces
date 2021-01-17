@@ -19,7 +19,7 @@ interface ViewInterface
      *
      * @return array
      */
-    public function getComponentFiles();
+    public function getComponentFiles(): array;
     
     /**
      * Add include file if not exists
@@ -28,7 +28,7 @@ interface ViewInterface
      * @param string $key
      * @return void
      */
-    public function addIncludeFile(array $file, $key);
+    public function addIncludeFile(array $file, string $key): void;
 
     /**
      * Get UI library path
@@ -36,38 +36,38 @@ interface ViewInterface
      * @param string $libraryName
      * @return string
     */
-    public function getLibraryPath($libraryName);
+    public function getLibraryPath(string $libraryName): string;
 
     /**
      * Get templates path
      *
      * @return string
      */
-    public function getTemplatesPath();
+    public function getTemplatesPath(): string;
     
     /**
      * Get primary template
      *
-     * @return string
+     * @return string|null
      */
-    public function getPrimaryTemplate();
+    public function getPrimaryTemplate(): ?string;
 
     /**
      * Set primary template
      *
-     * @param string $templateName
+     * @param string|null $templateName
      * @return void
      */
-    public function setPrimaryTemplate($templateName);
+    public function setPrimaryTemplate(?string $templateName): void;
     
     /**
      * Render template
      *
      * @param string $template
      * @param array $params
-     * @return string
+     * @return string|null
      */
-    public function fetch($template, $params = []);
+    public function fetch(string $template, array $params = []): ?string;
 
     /**
      * Render template block
@@ -75,9 +75,9 @@ interface ViewInterface
      * @param string $template
      * @param string $block
      * @param array $params
-     * @return string
+     * @return string|null
      */
-    public function fetchBlock($template, $block, $params = []);
+    public function fetchBlock(string $template, string $block, array $params = []): ?string;
 
     /**
      * Render template from string
@@ -86,7 +86,7 @@ interface ViewInterface
      * @param array $params
      * @return string
      */
-    public function fetchFromString($string, $params = []);
+    public function fetchFromString(string $string, array $params = []): string;
 
     /**
      * Get Twig environment
@@ -114,21 +114,21 @@ interface ViewInterface
      *
      * @return string
      */
-    public function getExtensionsPath();
+    public function getExtensionsPath(): string;
 
     /**
      * Get view path
      *
      * @return string
      */
-    public function getViewPath();
+    public function getViewPath(): string;
 
     /**
      * Get twig extension
      *
      * @return ExtensionInterface
      */
-    public function getExtension($class);
+    public function getExtension(string $class);
 
     /**
      * Get current extension

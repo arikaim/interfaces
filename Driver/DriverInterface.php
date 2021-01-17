@@ -68,7 +68,7 @@ interface DriverInterface
      *
      * @return array
     */
-    public function getDriverConfig();
+    public function getDriverConfig(): array;
 
     /**
      * Initialize driver

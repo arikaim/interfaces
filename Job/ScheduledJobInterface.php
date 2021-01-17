@@ -21,20 +21,20 @@ interface ScheduledJobInterface extends JobInterface
      *
      * @return integer
      */
-    public function getScheduleTime();
+    public function getScheduleTime(): int;
 
     /**
      * Set schedule time
      *
      * @param integer $timestamp
-     * @return void
+     * @return mixed
      */
-    public function setScheduleTime($timestamp);
+    public function setScheduleTime(int $timestamp);
     
     /**
      * Return true if job is due
      *
      * @return boolean
      */
-    public function isDue();
+    public function isDue(): bool;
 }

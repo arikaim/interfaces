@@ -10,6 +10,7 @@
 namespace Arikaim\Core\Interfaces;
 
 use Arikaim\Core\Interfaces\Job\JobInterface;
+use Closure;
 
 /**
  * Queue interface
@@ -24,7 +25,7 @@ interface QueueInterface
      * @param bool $disabled
      * @return bool
     */
-    public function addJob(JobInterface $job, $extension = null, $disabled = false);
+    public function addJob(JobInterface $job,?string $extension = null,bool $disabled = false): bool;
     
     /**
      * Delete job
@@ -32,7 +33,7 @@ interface QueueInterface
      * @param string|integer $id Job id, uiid
      * @return bool
      */
-    public function deleteJob($id);
+    public function deleteJob($id): bool;
     
     /**
      * Delete all jobs
@@ -46,22 +47,34 @@ interface QueueInterface
      *
      * @return JobInterface|null
      */
-    public function getNext();
+    public function getNext(): ?JobInterface;
 
     /**
      * Run job
      *
-     * @param JobInterface|string|integer $job
-     * @return boolean
+     * @param string|int $name
+     * @param Closure|null $onJobProgress
+     * @param Closure|null $onJobProgressError
+     * @return JobInterface|null
      */
-    public function executeJob($job);
+    public function run($name,?Closure $onJobProgress = null,?Closure $onJobProgressError = null): ?JobInterface;
+    
+    /**
+     * Execute job
+     *
+     * @param JobInterface $job
+     * @param Closure|null $onJobProgress
+     * @param Closure|null $onJobProgressError
+     * @return JobInterface|null
+    */
+    public function executeJob(JobInterface $job,?Closure $onJobProgress = null,?Closure $onJobProgressError = null): ?JobInterface;
 
     /**
      * Get all jobs due
      * 
-     * @return array
+     * @return array|null
      */
-    public function getJobsDue();
+    public function getJobsDue(): ?array;
 
     /**
      * Get jobs
@@ -69,23 +82,23 @@ interface QueueInterface
      * @param array $filter
      * @return array
      */
-    public function getJobs($filter = []);
+    public function getJobs(array $filter = []): ?array;
 
     /**
      * Get recurring jobs
      *
      * @param string|null $extension
-     * @return array
+     * @return array|null
      */
-    public function getRecuringJobs($extension = null);
+    public function getRecuringJobs(?string $extension = null): ?array;
 
     /**
      * Create job obj from jobs queue
      *
      * @param string|integer $name
-     * @return JobInterface|false
+     * @return JobInterface|null
      */
-    public function create($name);
+    public function create($name): ?JobInterface;
 
     /**
      * Delete jobs
@@ -93,13 +106,13 @@ interface QueueInterface
      * @param array $filter
      * @return boolean
      */
-    public function deleteJobs($filter = []);
+    public function deleteJobs(array $filter = []): bool;
 
     /**
      * Find job by name, id or uuid
      *
      * @param string|integer $id Job id, uiid or name
-     * @return array|false
+     * @return array|null
      */
-    public function getJob($id);
+    public function getJob($id): ?array;
 }

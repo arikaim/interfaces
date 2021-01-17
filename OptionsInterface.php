@@ -33,17 +33,17 @@ interface OptionsInterface
      * @param string|null $extension
      * @return boolean
     */
-    public function createOption($key, $value, $autoLoad = false, $extension = null);
+    public function createOption(string $key, $value, bool $autoLoad = false, ?string $extension = null): bool;
 
     /**
      * Save option
      *
      * @param string $key
      * @param mixed $value   
-     * @param string $extension
+     * @param string|null $extension
      * @return bool
      */
-    public function set($key, $value, $extension = null);
+    public function set(string $key, $value, $extension = null);
 
     /**
      * Get option
@@ -52,7 +52,7 @@ interface OptionsInterface
      * @param mixed $default
      * @return mixed
     */
-    public function get($key, $default = null);
+    public function get(string $key, $default = null);
 
     /**
      * Return true if option name exist
@@ -60,7 +60,7 @@ interface OptionsInterface
      * @param string $key
      * @return boolean
     */
-    public function has($key);
+    public function has(string $key): bool;
 
     /**
      * Remove option(s)

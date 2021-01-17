@@ -20,17 +20,25 @@ interface PackageManagerInterface
      * @param string $name
      * @return Arikaim\Core\Packages\Interfaces\PackageInterface
      */
-    public function createPackage($name);
+    public function createPackage(string $name);
 
     /**
-     * Find package 
+     * Find package
+     *
+     * @param string $param
+     * @param mixed $value
+     * @return PackageInterface|false
      */
-    public function findPackage($param, $value);
+    public function findPackage(string $param, $value);
 
     /**
-     *  @return Collection
-     */
-    public function getPackageProperties($name, $full = true);
+     * Get package properties
+     *
+     * @param string $name
+     * @param boolean $full
+     * @return Collection|null
+    */
+    public function getPackageProperties(string $name, bool $full = false);
     
     /**
      * Install package
@@ -38,15 +46,15 @@ interface PackageManagerInterface
      * @param string $name
      * @return bool
      */
-    public function installPackage($name);
+    public function installPackage(string $name): bool;
 
-    /**
+     /**
      * Run post install actions on package
      *
      * @param string $name
-     * @return void
+     * @return mixed
      */
-    public function postInstallPackage($name);
+    public function postInstallPackage(string $name);
 
     /**
      * Uninstall package
@@ -54,7 +62,7 @@ interface PackageManagerInterface
      * @param string $name
      * @return bool
      */
-    public function unInstallPackage($name);
+    public function unInstallPackage(string $name): bool;
 
     /**
      * Enable package
@@ -62,7 +70,7 @@ interface PackageManagerInterface
      * @param string $name
      * @return bool
      */
-    public function enablePackage($name);
+    public function enablePackage(string $name): bool;
 
     /**
      * Disable package
@@ -70,7 +78,7 @@ interface PackageManagerInterface
      * @param string $name
      * @return bool
      */
-    public function disablePackage($name);
+    public function disablePackage(string $name): bool;
     
     /**
      *  Install all packages 
@@ -79,14 +87,13 @@ interface PackageManagerInterface
     public function installAllPackages();
 
     /**
-     * Return package list (cached)
-     * If cached list is empty run sacen and save new values to cache
-     * 
-     * @param bool cached
-     * @param array filter
-     * @return array
+     * Get packages list
+     *
+     * @param boolean $cached
+     * @param mixed $filter
+     * @return mixed
      */
-    public function getPackages($cached = false, $filter = null);
+    public function getPackages(bool $cached = false, $filter = null);
 
     /**
      * Return installed packages
@@ -98,17 +105,18 @@ interface PackageManagerInterface
     public function getInstalled($status = null, $type = null);
 
     /**
-     * Create package backup
+     * Create zip arhive with package files and save to storage/backup/
      *
      * @param string $name
      * @return boolean
-    */
-    public function createBackup($name);
+     */
+    public function createBackup(string $name): bool;
 
     /**
      * Get package repository
      *
+     * @param string $packageName
      * @return RepositoryInterface
-     */
-    public function getRepository($packageName);
+    */
+    public function getRepository(string $packageName);
 }

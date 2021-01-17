@@ -15,21 +15,40 @@ namespace Arikaim\Core\Interfaces\Access;
 interface AccessInterface
 {    
     /**
+     *  Full permissions
+     */
+    const FULL = ['read','write','delete','execute'];
+    
+    /**
+     * Read
+     */
+    const READ      = ['read'];
+    const WRITE     = ['write'];
+    const DELETE    = ['delete'];
+    const EXECUTE   = ['execute'];
+    
+    /**
+     * Control panel permission
+     */
+    const CONTROL_PANEL = 'ControlPanel';
+
+    /**
      * Check if current loged user have control panel access
      *
+     * @param integer|null $authId 
      * @return boolean
      */
-    public function hasControlPanelAccess($authId = null);
+    public function hasControlPanelAccess($authId = null): bool;
 
     /**
      * Check access 
      *
-     * @param string $name Permission name
-     * @param string|array $type PermissionType (read,write,execute,delete)   
+     * @param string|int $name Permission name
+     * @param string|array|null $type PermissionType (read,write,execute,delete)   
      * @param integer|null $authId 
      * @return boolean
     */
-    public function hasAccess($name, $type = null, $authId = null);
+    public function hasAccess($name, $type = null, $authId = null): bool;
 
     /**
      * Resolve permission full name  name:type
@@ -37,21 +56,21 @@ interface AccessInterface
      * @param string $name
      * @return array
      */
-    public function resolvePermissionName($name);
+    public function resolvePermissionName(string $name): array;
 
     /**
      * Control panel permission name
      *
      * @return string
      */
-    public function getControlPanelPermission();
+    public function getControlPanelPermission(): string;
 
     /**
      * Full Permissions 
      *
      * @return array
      */
-    public function getFullPermissions();
+    public function getFullPermissions(): array;
 
     /**
      * Get user permissions list
@@ -70,5 +89,5 @@ interface AccessInterface
      * @param string|null $extension
      * @return boolean
      */
-    public function addPermission($name, $title = null, $description = null, $extension = null);
+    public function addPermission(string $name, ?string $title = null, ?string $description = null, ?string $extension = null): bool;
 }

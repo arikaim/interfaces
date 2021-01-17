@@ -100,4 +100,13 @@ interface QueueStorageInterface
      * @return array|false
      */
     public function getNext();
+
+    /**
+     * Save job config
+     *
+     * @param string|int $id
+     * @param array $config
+     * @return boolean
+    */
+    public function saveJobConfig($id, array $config): bool;
 }

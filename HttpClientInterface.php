@@ -15,13 +15,24 @@ namespace Arikaim\Core\Interfaces;
 interface HttpClientInterface
 {    
     /**
+     * Create and send an http request.
+     *
+     * @param string $method
+     * @param string|UriInterface $uri     URI object or string.
+     * @param array               $options Request options to apply.
+     *
+     * @return ResponseInterface
+    */
+    public function request(string $method, $uri, array $options = []);
+
+    /**
      * Fetch url
      *
      * @param string $url
      * @param array $options
      * @return string|null
      */
-    public function fetch($url, $options = []);
+    public function fetch($url, array $options = []);
 
     /**
      * Create and send an GET request.

@@ -20,19 +20,19 @@ interface MailerInterface
      * @param Arikaim\Core\Interfaces\MailInterface $message 
      * @return bool
      */ 
-    public function send($message);
+    public function send($message): bool;
 
      /**
      * Get error message
      *
      * @return string|null
      */
-    public function getErrorMessage();
+    public function getErrorMessage(): ?string;
 
     /**
      * Return mailer options
      *
      * @return array
      */
-    public function getOptions();
+    public function getOptions(): array;
 }

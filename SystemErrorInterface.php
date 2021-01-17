@@ -20,7 +20,7 @@ interface SystemErrorInterface
      * @param string $errorCode
      * @param string|null $default
      * @param array $params
-     * @return string
+     * @return string|null
      */
-    public function getError($errorCode, $params = [], $default = 'UNKNOWN_ERROR');
+    public function getError(string $errorCode, array $params = [], ?string $default = 'UNKNOWN_ERROR'): ?string;
 }

@@ -28,7 +28,7 @@ interface RoutesInterface
      * @param string $pattern
      * @return array|false
     */
-    public function getRoute($method, $pattern);
+    public function getRoute(string $method, string $pattern);
 
      /**
      * Get routes list for request method
@@ -36,7 +36,7 @@ interface RoutesInterface
      * @param string $method
      * @return array
      */
-    public function searchRoutes($method);
+    public function searchRoutes(string $method, $type = null);
     
     /**
      * Save route redirect url
@@ -46,7 +46,7 @@ interface RoutesInterface
      * @param string $url
      * @return boolean
      */
-    public function setRedirectUrl($method, $pattern, $url);
+    public function setRedirectUrl(string $method, string $pattern, string $url): bool;
 
     /**
      * Set routes status
@@ -55,7 +55,7 @@ interface RoutesInterface
      * @param integer   $status
      * @return boolean
      */
-    public function setRoutesStatus($filter = [], $status);
+    public function setRoutesStatus(array $filter = [], int $status): bool;
 
     /**
      * Add api route
@@ -63,12 +63,20 @@ interface RoutesInterface
      * @param string $method
      * @param string $pattern
      * @param string $handlerClass
-     * @param string $handlerMethod
-     * @param string $extension
+     * @param string|null $handlerMethod
+     * @param string|null $extension
      * @param integer|null $auth
      * @return bool
+     * @throws Exception
      */
-    public function addApiRoute($method, $pattern, $handlerClass, $handlerMethod, $extension, $auth = null);
+    public function addApiRoute(
+        string $method,
+        string $pattern, 
+        string $handlerClass, 
+        ?string $handlerMethod, 
+        ?string $extension, 
+        ?string $auth = null
+    ): bool;
 
     /**
      * Return true if reoute exists
@@ -77,7 +85,7 @@ interface RoutesInterface
      * @param string $pattern
      * @return boolean
      */
-    public function has($method, $pattern);
+    public function has(string $method, string $pattern): bool;
 
     /**
      * Delete route
@@ -86,7 +94,7 @@ interface RoutesInterface
      * @param string $pattern
      * @return bool
      */
-    public function delete($method, $pattern);
+    public function delete(string $method, string $pattern): bool;
 
     /**
      * Save route options
@@ -96,5 +104,5 @@ interface RoutesInterface
      * @param array $options
      * @return boolean
      */
-    public function saveRouteOptions($method, $pattern, $options);
+    public function saveRouteOptions(string $method, string $pattern, $options): bool;
 }

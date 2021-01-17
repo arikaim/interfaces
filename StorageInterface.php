@@ -18,10 +18,10 @@ interface StorageInterface
      * Get full file path
      *
      * @param string $path
-     * @param string $fileSystemName
+     * @param string|null $fileSystemName
      * @return string
      */
-    public function getFullPath($path = '', $fileSystemName = 'storage');
+    public function getFullPath(string $path = '', ?string $fileSystemName = null): string;
 
     /**
      * Write files
@@ -29,71 +29,73 @@ interface StorageInterface
      * @param string $path
      * @param string $contents
      * @param array $config
-     * @param boolean $dispatchEvent
+     * @param string|null $fileSystemName
      * @return bool 
      */
-    public function write($path, $contents, $config = [], $dispatchEvent = true);
+    public function write(string $path, $contents, $config = [], ?string $fileSystemName = null);
 
     /**
      * Read file
      *
      * @param string $path
+     * @param string|null $fileSystemName
      * @return string|false
-     */
-    public function read($path);
+    */
+    public function read(string $path, ?string $fileSystemName = null);
 
     /**
      * Delete file from storage folder
      *
      * @param string $path
-     * @param boolean $dispatchEvent
+     * @param string|null $fileSystemName
      * @return boolean
-    */
-    public function delete($path, $dispatchEvent = true);
+     */
+    public function delete(string $path, ?string $fileSystemName = null);
 
     /**
      * Rename files
      *
      * @param string $from
      * @param string $to
-     * @param boolean $dispatchEvent
+     * @param string|null $fileSystemName
      * @return boolean
      */
-    public function rename($from, $to, $dispatchEvent = true);
+    public function rename(string $from, string $to, ?string $fileSystemName = null);
 
     /**
      * Create directory in storage folder
      *
      * @param string $path
-     * @param boolean $dispatchEvent
+     * @param string|null $fileSystemName
      * @return boolean
      */
-    public function createDir($path, $dispatchEvent = true);
+    public function createDir(string $path, ?string $fileSystemName = null);
 
     /**
      * Return true if file exist
      *
      * @param string $path
+     * @param string|null $fileSystemName
      * @return boolean
-     */
-    public function has($path);
+    */
+    public function has(string $path, ?string $fileSystemName = null);
 
     /**
      * Copy files
      *
      * @param string $from
      * @param string $to
-     * @param boolean $dispatchEvent
+     * @param string|null $fileSystemName
      * @return void
-     */
-    public function copy($from, $to, $dispatchEvent = true);
+    */
+    public function copy(string $from, string $to, ?string $fileSystemName = null);
 
     /**
      * Delete directory in storage folder
      *
      * @param string $path
-     * @param string $fileSystemName
+     * @param string|null $fileSystemName
      * @return boolean
      */
-    public function deleteDir($path, $fileSystemName = 'storage');
+    public function deleteDir(string $path, ?string $fileSystemName = null);
 }

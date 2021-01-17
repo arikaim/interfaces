@@ -21,10 +21,10 @@ interface DriverManagerInterface
      * @param array $options  
      * @param array|null $config Drievr config properties
      * @return DriverInterface|false
-    */
-    public function create($name, $options = [], $config = null);
+     */
+    public function create(string $name, array $options = [], ?array $config = null);
 
-    /**
+     /**
       * Install driver
       *
       * @param string|object $name Driver name
@@ -37,15 +37,24 @@ interface DriverManagerInterface
       * @param string|null $extension
       * @return boolean
     */
-    public function install($name, $class = null, $category = null, $title = null, $description = null, $version = null, $config = [], $extension = null);
+    public function install(
+        $name, 
+        ?string $class = null,
+        ?string $category = null,
+        ?string $title = null,
+        ?string $description = null,
+        ?string $version = null,
+        array $config = [],
+        ?string $extension = null
+    ): bool;
 
-    /**
+   /**
      * Uninstall driver
      *
      * @param string $name Driver name   
      * @return boolean
      */
-    public function unInstall($name);
+    public function unInstall(string $name): bool;
 
     /**
      * Return true if driver exsits
@@ -53,7 +62,7 @@ interface DriverManagerInterface
      * @param string $name Driver name
      * @return boolean
      */
-    public function has($name);
+    public function has(string $name): bool;
 
     /**
      * Save driver config
@@ -62,7 +71,7 @@ interface DriverManagerInterface
      * @param array|object $config
      * @return boolean
      */
-    public function saveConfig($name, $config);
+    public function saveConfig(string $name, $config): bool;
 
     /**
      * Get driver config
@@ -70,7 +79,7 @@ interface DriverManagerInterface
      * @param string $name Driver name
      * @return Properties
      */
-    public function getConfig($name);
+    public function getConfig(string $name);
 
     /**
      * Enable driver
@@ -78,7 +87,7 @@ interface DriverManagerInterface
      * @param string $name
      * @return boolean
      */
-    public function enable($name);
+    public function enable(string $name): bool;
 
     /**
      * Disable driver
@@ -86,7 +95,7 @@ interface DriverManagerInterface
      * @param string $name
      * @return boolean
      */
-    public function disable($name);
+    public function disable(string $name): bool;
 
     /**
      * Get drivers list
@@ -95,5 +104,5 @@ interface DriverManagerInterface
      * @param integer|null  $status
      * @return array
      */
-    public function getList($category = null, $status = null);
+    public function getList(?string $category = null, ?int $status = null): array;
 }

@@ -21,22 +21,23 @@ interface EventInterface
      * @param mixed $value
      * @return void
      */
-    public function setParameter($name, $value);
+    public function setParameter(string $name, $value): void;
     
     /**
      * Return all event parameters
      *
      * @return array
      */
-    public function getParameters();
+    public function getParameters(): array;
 
     /**
      * Return event parameter
      *
      * @param string $name
+     * @param mixed|null $default
      * @return mixed
      */
-    public function getParameter($name);
+    public function getParameter(string $name, $default = null);
 
     /**
      * Return true if parameter exist.
@@ -44,28 +45,28 @@ interface EventInterface
      * @param string $name
      * @return boolean
      */
-    public function hasParameter($name);
+    public function hasParameter(string $name);
 
     /**
      * Stop event propagation
      *
-     * @return bool
+     * @return void
      */
-    public function stopPropagation();
+    public function stopPropagation(): void;
 
     /**
      * Return true if event propagation is enabled
      *
      * @return boolean
      */
-    public function isStopped();
+    public function isStopped(): bool;
 
     /**
      * Return event name
      *
      * @return string
      */
-    public function getName();
+    public function getName(): string;
 
     /**
      * Set event name
@@ -73,5 +74,5 @@ interface EventInterface
      * @param string $name
      * @return void
      */
-    public function setName($name);
+    public function setName(string $name): void;
 }

@@ -18,7 +18,7 @@ interface EventListenerInterface
      * Run listener code.
      *
      * @param EventInterface $event
-     * @return bool
+     * @return mixed
      */
     public function execute($event);
 
@@ -27,12 +27,12 @@ interface EventListenerInterface
      *
      * @return string
      */
-    public function getEventName();
+    public function getEventName(): string;
     
     /**
      * Get priority
      *
      * @return integer
      */
-    public function getPriority();    
+    public function getPriority(): int;    
 }

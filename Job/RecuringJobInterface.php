@@ -26,10 +26,10 @@ interface RecuringJobInterface extends JobInterface
     /**
      * Set recurring interval
      *
-     * @param mixed $interval
-     * @return mixed
+     * @param string $interval
+     * @return void
      */
-    public function setRecuringInterval($interval);
+    public function setRecuringInterval(string $interval): void;
 
     /**
      * Get next run date time timestamp
@@ -43,5 +43,5 @@ interface RecuringJobInterface extends JobInterface
      *
      * @return boolean
      */
-    public function isDue();
+    public function isDue(): bool;
 }

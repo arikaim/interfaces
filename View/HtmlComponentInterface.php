@@ -27,16 +27,17 @@ interface HtmlComponentInterface
      * @param string $name
      * @param array $params
      * @param string $language
+     * @param bool $withOptions
      * @return ComponentDescriptorInterface
     */
-    public function render($name, $params = [], $language);
+    public function render(string $name, array $params = [], string $language, bool $withOptions = true); 
 
     /**
      * Return component files
      *
      * @param string $name
-     * @param string $fileType
+     * @param string|null $fileType
      * @return array
      */
-    public function getComponentFiles($name, $fileType = null);
+    public function getComponentFiles(string $name, ?string $fileType = null): array;
 }

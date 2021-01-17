@@ -19,7 +19,7 @@ interface ModuleInterface
      *
      * @return string
      */
-    public function getServiceName();
+    public function getServiceName(): ?string;
 
     /**
      * Boot module callback
@@ -47,7 +47,7 @@ interface ModuleInterface
      *
      * @return string|null
      */
-    public function getTestError();
+    public function getTestError(): ?string;
 
     /**
      * Set module config
@@ -55,7 +55,7 @@ interface ModuleInterface
      * @param array $config 
      * @return void
      */
-    public function setConfig($config);
+    public function setConfig(array $config): void;
     
     /**
      * Get module config
@@ -63,5 +63,5 @@ interface ModuleInterface
      * @param string|null $key
      * @return array
      */
-    public function getConfig($key = null);
+    public function getConfig(?string $key = null): ?array;
 }
