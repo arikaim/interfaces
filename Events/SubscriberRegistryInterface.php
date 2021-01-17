@@ -15,15 +15,22 @@ namespace Arikaim\Core\Interfaces\Events;
 interface SubscriberRegistryInterface 
 {
     /**
-     * Save subscriber info to db table. 
+     * Save subscriber info. 
      *
      * @param string $eventName
      * @param string $class
      * @param string|null $extension
      * @param integer $priority
+     * @param string|null $hadnlerMethod
      * @return bool
      */
-    public function addSubscriber($eventName, $class, $extension = null, $priority = 0, $hadnlerMethod = null);
+    public function addSubscriber(
+        string $eventName, 
+        string $class, 
+        ?string $extension = null, 
+        int $priority = 0, 
+        ?string $hadnlerMethod = null
+    ): bool;
 
     /**
      * Get subscribers list
