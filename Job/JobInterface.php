@@ -154,4 +154,11 @@ interface JobInterface
      * @return string|null
      */
     public function getQueue(): ?string;
+
+    /**
+     * Convert to array
+     *
+     * @return array
+     */
+    public function toArray(): array;
 }

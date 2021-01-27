@@ -21,12 +21,12 @@ interface JobLogInterface
      */
     public function getLogMessage(): string;
 
-     /**
+    /**
      * Set log messge
      *
      * @param string $message
      * @return void
-     */
+    */
     public function setLogMessage(string $message): void;
     
     /**
