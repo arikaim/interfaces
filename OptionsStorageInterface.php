@@ -23,18 +23,18 @@ interface OptionsStorageInterface
      * @param string|null $extension
      * @return boolean
     */
-    public function createOption($key, $value, $autoLoad = false, $extension = null);
+    public function createOption(string $key, $value, bool $autoLoad = false, ?string $extension = null): bool;
 
     /**
      * Save option
      *
      * @param string $key
      * @param mixed $value
-     * @param string $extension
-     * @param int|null $autoLoad
+     * @param string|null $extension
+     * @param bool $autoLoad
      * @return bool
      */
-    public function saveOption($key, $value, $extension = null, $autoLoad = null);
+    public function saveOption(string $key, $value, ?string $extension = null, bool $autoLoad = false): bool;
 
     /**
      * Return true if option name exist
@@ -42,7 +42,7 @@ interface OptionsStorageInterface
      * @param string $key
      * @return boolean
     */
-    public function hasOption($key);
+    public function hasOption(string $key): bool;
 
     /**
      * Get option
@@ -51,7 +51,7 @@ interface OptionsStorageInterface
      * @param mixed $default
      * @return mixed
     */
-    public function read($key, $default = null);
+    public function read(string $key, $default = null);
 
     /**
      * Remove option(s)
@@ -60,7 +60,7 @@ interface OptionsStorageInterface
      * @param string|null $extension
      * @return bool
     */
-    public function remove($key = null, $extension = null);
+    public function remove(?string $key = null, ?string $extension = null): bool;
 
     /**
      * Search for options
@@ -69,14 +69,14 @@ interface OptionsStorageInterface
      * @param bool $compactKeys
      * @return array
     */
-    public function searchOptions($searchKey, $compactKeys = false);
+    public function searchOptions(?string $searchKey, bool $compactKeys = false): array;
 
     /**
      * Load options
      *
      * @return array
     */
-    public function loadOptions();
+    public function loadOptions(): array;
 
     /**
      * Get extension options
@@ -84,5 +84,5 @@ interface OptionsStorageInterface
      * @param string $extensioName
      * @return mixed
      */
-    public function getExtensionOptions($extensioName);
+    public function getExtensionOptions(string $extensioName);
 }

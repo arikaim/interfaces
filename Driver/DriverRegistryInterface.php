@@ -21,7 +21,7 @@ interface DriverRegistryInterface
       * @param array  $data     Driver data
       * @return boolean
     */
-    public function addDriver($name, $data);
+    public function addDriver(string $name, array $data): bool;
 
     /**
      * Remove driver
@@ -29,7 +29,7 @@ interface DriverRegistryInterface
      * @param string $name   
      * @return boolean
     */
-    public function removeDriver($name);
+    public function removeDriver(string $name): bool;
     
     /**
      * Get driver
@@ -37,7 +37,7 @@ interface DriverRegistryInterface
      * @param string|integer $name Driver name
      * @return array|false
      */
-    public function getDriver($name);
+    public function getDriver(string $name);
 
     /**
      * Return true if driver exist
@@ -45,7 +45,7 @@ interface DriverRegistryInterface
      * @param string $name  
      * @return boolean
      */
-    public function hasDriver($name);
+    public function hasDriver(string $name): bool;
 
     /**
      * Save driver config
@@ -54,16 +54,16 @@ interface DriverRegistryInterface
      * @param array $config
      * @return boolean
      */
-    public function saveConfig($name, $config);
+    public function saveConfig(string $name, array $config): bool;
 
     /**
      * Save driver config
      *
      * @param string $name Driver name
-     * @param integer $status    
+     * @param integer|string $status    
      * @return boolean
      */
-    public function setDriverStatus($name, $status);
+    public function setDriverStatus(string $name, $status): bool;
 
     /**
      * Get driver config
@@ -71,7 +71,7 @@ interface DriverRegistryInterface
      * @param string $name Driver name
      * @return array
      */
-    public function getDriverConfig($name);
+    public function getDriverConfig(string $name);
 
      /**
      * Get drivers list
@@ -80,5 +80,5 @@ interface DriverRegistryInterface
      * @param integer|null $status
      * @return array
      */
-    public function getDriversList($category = null, $status = null);
+    public function getDriversList(?string $category = null, ?int $status = null): array;
 }

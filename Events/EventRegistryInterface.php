@@ -19,11 +19,11 @@ interface EventRegistryInterface
      *
      * @param string $name
      * @param string $title
-     * @param string $extension
-     * @param string $description
+     * @param string|null $extension
+     * @param string|null $description
      * @return bool
      */
-    public function registerEvent($name, $title, $extension = null, $description = null);
+    public function registerEvent(string $name, string $title, ?string $extension = null, ?string $description = null): bool;
 
     /**
      * Return true if event exist
@@ -31,7 +31,7 @@ interface EventRegistryInterface
      * @param string $name
      * @return boolean
      */
-    public function hasEvent($name);
+    public function hasEvent(string $name): bool;
 
     /**
      * Deleet event
@@ -39,7 +39,7 @@ interface EventRegistryInterface
      * @param string $name
      * @return bool
      */
-    public function deleteEvent($name);
+    public function deleteEvent(string $name): bool;
 
     /**
      * Delete events.
@@ -47,7 +47,7 @@ interface EventRegistryInterface
      * @param array $filter
      * @return bool
      */
-    public function deleteEvents(array $filter);
+    public function deleteEvents(array $filter): bool;
 
     /**
      * Get events list
@@ -55,7 +55,7 @@ interface EventRegistryInterface
      * @param array $filter
      * @return array
      */
-    public function getEvents(array $filter = []);
+    public function getEvents(array $filter = []): array;
 
     /**
      * Set events status
@@ -64,5 +64,5 @@ interface EventRegistryInterface
      * @param integer $status
      * @return boolean
      */
-    public function setEventsStatus(array $filter = [], $status);
+    public function setEventsStatus(array $filter = [], int $status): bool;
 }

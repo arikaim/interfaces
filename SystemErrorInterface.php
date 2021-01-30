@@ -14,6 +14,8 @@ namespace Arikaim\Core\Interfaces;
  */
 interface SystemErrorInterface 
 {  
+    const UNKNOWN_ERROR_CODE = 'UNKNOWN_ERROR';
+
     /**
      * Get error
      *
@@ -22,5 +24,5 @@ interface SystemErrorInterface
      * @param array $params
      * @return string|null
      */
-    public function getError(string $errorCode, array $params = [], ?string $default = 'UNKNOWN_ERROR'): ?string;
+    public function getError(string $errorCode, array $params = [], ?string $default = null): ?string;
 }

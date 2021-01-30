@@ -38,7 +38,7 @@ interface SubscriberRegistryInterface
      * @param array $filter
      * @return array
      */
-    public function getSubscribers(array $filter = []);
+    public function getSubscribers(array $filter = []): array;
 
     /**
      * Delete subscribers.

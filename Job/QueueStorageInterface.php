@@ -21,7 +21,7 @@ interface QueueStorageInterface
      * @param integer        $status
      * @return boolean
      */
-    public function setJobStatus($id, $status);
+    public function setJobStatus($id, int $status): bool;
 
     /**
      * Update execution status
@@ -29,7 +29,7 @@ interface QueueStorageInterface
      * @param JobInterface $job
      * @return bool
     */
-    public function updateExecutionStatus(JobInterface $job);
+    public function updateExecutionStatus(JobInterface $job): bool;
 
     /**
      * Add job
@@ -45,15 +45,15 @@ interface QueueStorageInterface
      * @param string|integer $id
      * @return boolean
      */
-    public function hasJob($id);
+    public function hasJob($id): bool;
 
     /**
      * Get job
      *
      * @param string|integer $id
-     * @return array|false
+     * @return array|null
      */
-    public function getJob($id);
+    public function getJob($id): ?array;
 
     /**
      * Find job and return job id
@@ -77,7 +77,7 @@ interface QueueStorageInterface
      * @param array $filter
      * @return boolean
      */
-    public function deleteJobs($filter = []);
+    public function deleteJobs(array $filter = []): bool;
 
     /**
      * Get jobs
@@ -85,21 +85,21 @@ interface QueueStorageInterface
      * @param array $filter   
      * @return array
      */
-    public function getJobs($filter = []);
+    public function getJobs(array $filter = []): ?array;
 
     /**
      * Get all jobs due
      * 
-     * @return array
+     * @return array|null
      */
-    public function getJobsDue();
+    public function getJobsDue(): ?array;
 
     /**
      * Get next Job
      *
-     * @return array|false
+     * @return array|null
      */
-    public function getNext();
+    public function getNext(): ?array;
 
     /**
      * Save job config
