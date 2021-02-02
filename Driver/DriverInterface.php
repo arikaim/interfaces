@@ -99,4 +99,12 @@ interface DriverInterface
      * @return void
      */
     public function setDriverOptions(array $options);
+
+    /**
+     * Set driver config
+     *
+     * @param array $config
+     * @return void
+     */
+    public function setDriverConfig(array $config): void;
 }
