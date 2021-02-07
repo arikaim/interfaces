@@ -15,13 +15,6 @@ namespace Arikaim\Core\Interfaces;
 interface ModuleInterface
 {    
     /**
-     * Return service name if module is service
-     *
-     * @return string
-     */
-    public function getServiceName(): ?string;
-
-    /**
      * Boot module callback
      *
      * @return void
