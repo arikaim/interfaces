@@ -75,4 +75,11 @@ interface EventInterface
      * @return void
      */
     public function setName(string $name): void;
+
+    /**
+     * Return params array
+     *
+     * @return array
+     */
+    public function toArray(): array;
 }

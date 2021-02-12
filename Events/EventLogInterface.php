@@ -7,12 +7,12 @@
  * @license     http://www.arikaim.com/license
  * 
 */
-namespace Arikaim\Core\Interfaces\Job;
+namespace Arikaim\Core\Interfaces\Events;
 
 /**
- * Job log interface
+ * Event log interface
  */
-interface JobLogInterface
+interface EventLogInterface
 {   
     /**
      * Get log message
