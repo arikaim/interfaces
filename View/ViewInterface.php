@@ -26,9 +26,10 @@ interface ViewInterface
      *
      * @param array $file
      * @param string $key
+     * @param string $componentName
      * @return void
      */
-    public function addIncludeFile(array $file, string $key): void;
+    public function addIncludeFile(array $file, string $key, string $componentName): void;
 
     /**
      * Get UI library path
