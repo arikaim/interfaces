@@ -15,6 +15,20 @@ namespace Arikaim\Core\Interfaces;
 interface ModuleInterface
 {    
     /**
+     * Get module name
+     *
+     * @return string
+     */
+    public function getModuleName(): string;
+
+    /**
+     * Set module name
+     *
+     * @return void
+     */
+    public function setModuleName(string $name): void;
+
+    /**
      * Boot module callback
      *
      * @return void
@@ -24,7 +38,7 @@ interface ModuleInterface
     /**
      * Install module callbaxk
      *
-     * @return bool
+     * @return void
      */
     public function install();
 
