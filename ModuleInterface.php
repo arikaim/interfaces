@@ -13,7 +13,14 @@ namespace Arikaim\Core\Interfaces;
  * Module interface
  */
 interface ModuleInterface
-{    
+{   
+    /**
+     * Get module instance
+     *
+     * @return mixed|null
+     */
+    public function getInstance();
+
     /**
      * Get module name
      *
