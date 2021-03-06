@@ -27,9 +27,10 @@ interface ViewInterface
      * @param array $file
      * @param string $key
      * @param string $componentName
+     * @param string $type
      * @return void
      */
-    public function addIncludeFile(array $file, string $key, string $componentName): void;
+    public function addIncludeFile(array $file, string $key, string $componentName, string $type = ''): void;
 
     /**
      * Get UI library path
@@ -92,7 +93,7 @@ interface ViewInterface
     /**
      * Get Twig environment
      *
-     * @return Twig\Environment
+     * @return \Twig\Environment
      */
     public function getEnvironment();
 

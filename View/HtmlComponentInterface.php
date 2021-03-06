@@ -17,7 +17,7 @@ interface HtmlComponentInterface
     /**
      * Get view ref
      *
-     * @return ViewInterface
+     * @return \Arikaim\Core\Interfaces\View\ViewInterface
      */
     public function getVeiw();
     
@@ -28,9 +28,10 @@ interface HtmlComponentInterface
      * @param array $params
      * @param string $language
      * @param bool $withOptions
-     * @return ComponentDescriptorInterface
+     * @param string|null $type
+     * @return \Arikaim\Core\View\Interfaces\ComponentDescriptorInterface
     */
-    public function render(string $name, array $params = [], string $language, bool $withOptions = true); 
+    public function render(string $name, array $params = [], string $language, bool $withOptions = true, ?string $type = null); 
 
     /**
      * Return component files
