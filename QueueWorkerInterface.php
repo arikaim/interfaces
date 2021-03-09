@@ -1,0 +1,58 @@
+<?php
+/**
+ * Arikaim
+ *
+ * @link        http://www.arikaim.com
+ * @copyright   Copyright (c)  Konstantin Atanasov <info@arikaim.com>
+ * @license     http://www.arikaim.com/license
+ * 
+*/
+namespace Arikaim\Core\Interfaces;
+
+/**
+ * Queue worker manager interface
+ */
+interface QueueWorkerInterface
+{     
+    /**
+     * Run worker
+     *    
+     * @return boolean
+     */
+    public function run(): bool;
+
+    /**
+     * Return true if worker is running
+     *    
+     * @return boolean
+     */
+    public function isRunning(): bool;
+
+    /**
+     * Stop worker
+     *    
+     * @return boolean
+     */
+    public function stop(): bool;
+
+    /**
+     * Get title
+     *    
+     * @return string
+     */
+    public function getTitle(): string;
+
+    /**
+     * Get description
+     *    
+     * @return string|null
+     */
+    public function getDescription(): ?string;
+
+    /**
+     * Get worker service details
+     *
+     * @return array
+     */
+    public function getDetails(): array;
+}
