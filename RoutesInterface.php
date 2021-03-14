@@ -15,6 +15,14 @@ namespace Arikaim\Core\Interfaces;
 interface RoutesInterface
 {    
     /**
+     *  Route type constant
+     */
+    const PAGE      = 1;
+    const API       = 2;
+    const HOME_PAGE = 3;
+    const ADMIN_API = 4;
+
+    /**
      * Get home page route
      *
      * @return array
@@ -65,7 +73,8 @@ interface RoutesInterface
      * @param string $handlerClass
      * @param string|null $handlerMethod
      * @param string|null $extension
-     * @param integer|null $auth
+     * @param integer|string|null $auth
+     * @param int $type
      * @return bool
      * @throws Exception
      */
@@ -75,7 +84,8 @@ interface RoutesInterface
         string $handlerClass, 
         ?string $handlerMethod, 
         ?string $extension, 
-        ?string $auth = null
+        ?string $auth = null,
+        int $type
     ): bool;
 
     /**
