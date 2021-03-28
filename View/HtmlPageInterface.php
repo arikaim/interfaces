@@ -17,12 +17,22 @@ use Arikaim\Core\Interfaces\View\HtmlComponentInterface;
 interface HtmlPageInterface extends HtmlComponentInterface
 {  
     /**
+     * Render html component
+     *
+     * @param string $name
+     * @param array $params
+     * @param string|null $language    
+     * @return \Arikaim\Core\Interfaces\View\ComponentInterface
+    */
+    public function render(string $name, array $params = [], ?string $language = null); 
+
+    /**
      * Render application error
      *
      * @param array $data
      * @param string|null $language    
      * @param string|null $templateName    
-     * @return ComponentDescriptorInterface
+     * @return \Arikaim\Core\Interfaces\View\ComponentInterface
      */
     public function renderApplicationError(array $data = [], ?string $language = null, ?string $templateName = null);
 
@@ -32,7 +42,7 @@ interface HtmlPageInterface extends HtmlComponentInterface
      * @param array $data
      * @param string|null $language  
      * @param string|null $templateName    
-     * @return ComponentDescriptorInterface
+     * @return \Arikaim\Core\Interfaces\View\ComponentInterface
      */
     public function renderSystemError(array $data = [], ?string $language = null, ?string $templateName = null);
 
@@ -42,7 +52,7 @@ interface HtmlPageInterface extends HtmlComponentInterface
      * @param array $data
      * @param string|null $language 
      * @param string|null $templateName     
-     * @return ComponentDescriptorInterface
+     * @return \Arikaim\Core\Interfaces\View\ComponentInterface
     */
     public function renderPageNotFound(array $data = [], ?string $language = null, ?string $templateName = null);
 
@@ -54,22 +64,15 @@ interface HtmlPageInterface extends HtmlComponentInterface
     public function getCurrentTemplate();
     
     /**
-     * Return current page language
-     *
-     * @return string
-     */
-    public function getLanguage();
-
-    /**
-     * Create
+     * Render html component
      *
      * @param string $name
-     * @param array|null $params
+     * @param array $params
      * @param string|null $language
-     * @param boolean $withOptions
+     * @param string|null $type
      * @return Arikaim\Core\Interfaces\View\HtmlComponentInterface;
     */
-    public function createHtmlComponent(string $name, ?array $params = [], ?string $language = null, bool $withOptions = true);
+    public function renderHtmlComponent(string $name, array $params = [], ?string $language = null, ?string $type = null);
     
     /**
      * Get head properties
@@ -83,15 +86,5 @@ interface HtmlPageInterface extends HtmlComponentInterface
      *
      * @return array
      */
-    public function getComponentsFiles();
-
-    /**
-     * Create email component
-     *
-     * @param string $name
-     * @param array|null $params
-     * @param string|null $language
-     * @return \Arikaim\Core\View\Html\EmailComponent
-     */
-    public function createEmailComponent(string $name, ?array $params = [], ?string $language = null);
+    public function getComponentsFiles(): array;
 }

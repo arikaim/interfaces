@@ -17,51 +17,51 @@ interface DriverInterface
     /**
      * Return driver name.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDriverName();
+    public function getDriverName(): ?string;
 
     /**
      * Return driver display name.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDriverTitle();
+    public function getDriverTitle(): ?string;
 
     /**
      * Return driver description.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDriverDescription();
+    public function getDriverDescription(): ?string;
 
     /**
      * Return driver category.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDriverCategory();
+    public function getDriverCategory(): ?string;
 
     /**
      * Return driver version.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDriverVersion();
+    public function getDriverVersion(): ?string;
 
     /**
      * Return driver extension name (if driver class is located in extension)
      *
-     * @return string
+     * @return string|null
     */
-    public function getDriverExtensionName();
+    public function getDriverExtensionName(): ?string;
 
     /**
      * Get driver class
      *
      * @return string
     */
-    public function getDriverClass();
+    public function getDriverClass(): string;
 
     /**
      * Get driver config

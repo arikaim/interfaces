@@ -15,31 +15,22 @@ namespace Arikaim\Core\Interfaces\View;
 interface ViewInterface
 {    
     /**
-     * Get components include files
+     * Get service
      *
-     * @return array
+     * @param string $name
+     * @return mixed|null
      */
-    public function getComponentFiles(): array;
+    public function getService(string $name);
     
     /**
-     * Add include file if not exists
+     * Add global variable
      *
-     * @param array $file
-     * @param string $key
-     * @param string $componentName
-     * @param string $type
+     * @param string $name
+     * @param mixed $value
      * @return void
      */
-    public function addIncludeFile(array $file, string $key, string $componentName, string $type = ''): void;
-
-    /**
-     * Get UI library path
-     *
-     * @param string $libraryName
-     * @return string
-    */
-    public function getLibraryPath(string $libraryName): string;
-
+    public function addGlobal(string $name, $value): void;
+    
     /**
      * Get templates path
      *
@@ -105,13 +96,6 @@ interface ViewInterface
     public function getCache();
 
     /**
-     * Get properties
-     *
-     * @return Collection
-    */
-    public function properties();
-
-     /**
      * Gte extensions path
      *
      * @return string
@@ -138,4 +122,25 @@ interface ViewInterface
      * @return ExtensionInterface
      */
     public function getCurrentExtension();
+
+    /**
+     * Create component
+     *
+     * @param string $name
+     * @param string $language
+     * @param string $type
+     * @return mixed
+     */
+    public function createComponent(string $name, string $language, string $type);
+
+    /**
+     * Render html component
+     *
+     * @param string $name
+     * @param array|null $params
+     * @param string $language
+     * @param string|null $type
+     * @return \Arikaim\Core\Interfaces\View\HtmlComponentInterface
+    */
+    public function renderComponent(string $name, ?array $params = [], string $language, ?string $type = null);
 }
