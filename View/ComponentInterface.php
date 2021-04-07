@@ -30,7 +30,9 @@ interface ComponentInterface
     const SVG_COMPONENT_TYPE     = 'svg';
     const JSON_COMPONENT_TYPE    = 'json';
     const EMPTY_COMPONENT_TYPE   = 'empty';
-    
+    const HTML_COMPONENT_TYPE    = 'html';
+    const JS_COMPONENT_TYPE      = 'js';
+
     /**
      * Add included component
      *

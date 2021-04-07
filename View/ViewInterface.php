@@ -23,6 +23,13 @@ interface ViewInterface
     public function getService(string $name);
     
     /**
+     * Get all global vars
+     *
+     * @return array
+     */
+    public function getGlobals(): array;
+
+    /**
      * Add global variable
      *
      * @param string $name
