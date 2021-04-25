@@ -12,7 +12,7 @@ namespace Arikaim\Core\Interfaces;
 /**
  * Queue worker manager interface
  */
-interface QueueWorkerInterface
+interface WorkerManagerInterface
 {     
     /**
      * Run worker
@@ -55,4 +55,18 @@ interface QueueWorkerInterface
      * @return array
      */
     public function getDetails(): array;
+
+    /**
+     * Get host
+     *
+     * @return string
+     */
+    public function getHost(): string;
+
+    /**
+     * Get port
+     *
+     * @return string
+     */
+    public function getPort(): string;
 }
