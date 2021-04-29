@@ -12,16 +12,16 @@ namespace Arikaim\Core\Interfaces\Job;
 use Arikaim\Core\Interfaces\Job\JobInterface;
 
 /**
- * Job recuring interface
+ * Job recurring interface
  */
-interface RecuringJobInterface extends JobInterface
+interface RecurringJobInterface extends JobInterface
 {   
     /**
      * Return recurring interval
      *
-     * @return mixed
+     * @return string|null
      */
-    public function getRecuringInterval();
+    public function getRecurringInterval(): ?string;
 
     /**
      * Set recurring interval
@@ -29,7 +29,7 @@ interface RecuringJobInterface extends JobInterface
      * @param string $interval
      * @return void
      */
-    public function setRecuringInterval(string $interval): void;
+    public function setRecurringInterval(string $interval): void;
 
     /**
      * Get next run date time timestamp

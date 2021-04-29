@@ -18,14 +18,24 @@ use Closure;
 interface QueueInterface
 {    
     /**
-     * Add job
+     * Add job to queue
      *
      * @param JobInterface $job
      * @param string|null $extension
      * @param bool $disabled
+     * @param string|null $recuringInterval
+     * @param int|null $scheduleTime
+     * @param array|null $config
      * @return bool
-    */
-    public function addJob(JobInterface $job,?string $extension = null,bool $disabled = false): bool;
+     */
+    public function addJob(
+        JobInterface $job, 
+        ?string $extension = null, 
+        bool $disabled = false,
+        ?string $recuringInterval = null,
+        ?int $scheduleTime = null,
+        ?array $config = null
+    ): bool;
     
     /**
      * Delete job
