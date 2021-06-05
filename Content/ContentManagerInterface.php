@@ -19,20 +19,22 @@ interface ContentManagerInterface
     /**
      * Get content providers list
      *
+     * @param string|null $category
+     * @param string|null $contentType
      * @return array
      */
-    public function getProviders(?string $categry): array;
+    public function getProviders(?string $category, ?string $contentType = null): array;
 
     /**
      * Register content provider
      *
-     * @param object $provider
+     * @param object|string $provider
      * @return boolean
      */
     public function registerProvider($provider): bool;
 
     /**
-     * Un register content provider
+     * Unregister content provider
      *
      * @param string $name
      * @return boolean
@@ -46,4 +48,12 @@ interface ContentManagerInterface
      * @return ContentProviderInterface|null
      */
     public function provider(string $name): ?ContentProviderInterface;
+
+    /**
+     * Check if provider exists
+     *
+     * @param string $name
+     * @return boolean
+     */
+    public function hasProvider(string $name): bool;
 }

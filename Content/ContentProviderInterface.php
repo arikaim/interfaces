@@ -9,21 +9,13 @@
 */
 namespace Arikaim\Core\Interfaces\Content;
 
-use Arikaim\Core\Interfaces\Content\ContentItemInterface;
+use Arikaim\Core\Interfaces\Content\ContentTypeInterface;
 
 /**
  * Content provider interface
  */
 interface ContentProviderInterface
 {   
-    const TEXT_TYPE    = 'text';
-    const IMAGE_URL    = 'image.url';
-    const NUMBER_TYPE  = 'number';
-    const IMAGE_BINARY = 'image.binary';
-    const URL_TYPE     = 'url';
-    const FILE_PATH    = 'file.path';
-    const FILE_URL     = 'file.url';
-
     /**
      * Get provider name
      *
@@ -39,27 +31,49 @@ interface ContentProviderInterface
     public function getProviderCategory(): ?string;
 
     /**
+     * Get provider title
+     *
+     * @return string|null
+     */
+    public function getProviderTitle(): ?string;
+
+    /**
      * Get content
      *
-     * @param string $id  Id, Uuid or content name slug
-     * @return ContentItemInterface|null
+     * @param string|int|array $key  Id, Uuid or content name slug
+     * @return array|null
      */
-    public function getContent(string $id): ?ContentItemInterface;
+    public function getContent($key): ?array;
 
     /**
      * Get content type
      *    
-     * @return string
+     * @return ContentTypeInterface|null
      */
-    public function getContentType(): string;
+    public function getContentType(): ?ContentTypeInterface;
+
+    /**
+     * Get content type
+     *    
+     * @param ContentTypeInterface $contentType
+     * @return void
+     */
+    public function setContentType(ContentTypeInterface $contentType): void;
+
+    /**
+     * Get supported content types
+     *
+     * @return array
+    */
+    public function getSupportedContentTypes(): array;
 
     /**
      * Get content list
      *
-     * @param string|null $category
+     * @param mixed|null $filter
      * @param integer $page
      * @param integer $perPage
-     * @return array ContentItemInterface
-     */
-    public function getContentList(?string $category, int $page = 1, int $perPage = 20): array;
+     * @return array[ContentItemInterface]
+    */
+    public function getContentItems($filter = null, int $page = 1, int $perPage = 20): ?array;
 }

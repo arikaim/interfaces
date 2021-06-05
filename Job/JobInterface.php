@@ -30,11 +30,26 @@ interface JobInterface
     public function setDateExecuted(?int $time): void;
 
     /**
+     * Set date pushed in queue
+     *   
+     * @param int|null $time  timestamp
+     * @return void
+    */
+    public function setDateCreated(?int $time): void;
+
+    /**
      * Get execution timestamp
      *   
      * @return int
     */
     public function getDateExecuted(): ?int;
+
+    /**
+     * Get date created timestamp
+     *   
+     * @return int
+    */
+    public function getDateCreated(): ?int;
 
     /**
      * Add error

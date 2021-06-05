@@ -9,24 +9,28 @@
 */
 namespace Arikaim\Core\Interfaces\Content;
 
+use Arikaim\Core\Interfaces\Content\FieldInterface;
+
 /**
  * Content item interface
  */
 interface ContentItemInterface
 {   
     /**
-     * Get item content
+     * Get content type
      *
-     * @return mixed
+     * @return ContentTypeInterface
      */
-    public function getContent();
+    public function getType(): ContentTypeInterface;
 
     /**
-     * Get content item title
+     * Run action
      *
-     * @return string
+     * @param string $name
+     * @param array|null $options
+     * @return void
      */
-    public function getTitle(): string;
+    public function runAction(string $name, ?array $options = []);
 
     /**
      * Get content item id
@@ -34,4 +38,28 @@ interface ContentItemInterface
      * @return int|string
      */
     public function getId();
+
+    /**
+     * Get fields
+     *
+     * @return array
+     */
+    public function fields(): array;
+
+    /**
+     * Get field value
+     *
+     * @param string $fieldName
+     * @param mixed $default
+     * @return mixed
+     */
+    public function getValue(string $fieldName, $default = null);
+
+    /**
+     * Get content field
+     *
+     * @param string $fieldName
+     * @return FieldInterface|null
+     */
+    public function field(string $fieldName): ?FieldInterface;
 }

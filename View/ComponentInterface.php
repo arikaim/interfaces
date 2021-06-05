@@ -34,6 +34,13 @@ interface ComponentInterface
     const JS_COMPONENT_TYPE      = 'js';
 
     /**
+     * Get options
+     *
+     * @return array
+     */
+    public function getOptions(): array;
+    
+    /**
      * Add included component
      *
      * @param string $name
