@@ -17,6 +17,25 @@ use Arikaim\Core\Interfaces\Content\ContentTypeInterface;
 interface ContentProviderInterface
 {   
     /**
+     * Create new content item
+     *
+     * @param array $data
+     * @param string|null $contentType  Content type name
+     * @return array|null
+     */
+    public function createItem(array $data, ?string $contentType = null): ?array;
+
+    /**
+     * Save content item
+     *
+     * @param string|int $key
+     * @param array $data
+     * @param string|null $contentType  Content type name
+     * @return boolean
+     */
+    public function saveItem($key, array $data, ?string $contentType = null): bool;
+
+    /**
      * Get provider name
      *
      * @return string
@@ -41,9 +60,10 @@ interface ContentProviderInterface
      * Get content
      *
      * @param string|int|array $key  Id, Uuid or content name slug
+     * @param string|null $contentType  Content type name
      * @return array|null
      */
-    public function getContent($key): ?array;
+    public function getContent($key, ?string $contentType = null): ?array;
 
     /**
      * Get content type
