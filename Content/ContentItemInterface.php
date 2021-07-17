@@ -56,6 +56,15 @@ interface ContentItemInterface
     public function getValue(string $fieldName, $default = null);
 
     /**
+     * Set field value
+     *
+     * @param string $fieldName
+     * @param mixed $value
+     * @return void
+     */
+    public function setValue(string $fieldName, $value): void;
+
+    /**
      * Get content field
      *
      * @param string $fieldName
