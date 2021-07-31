@@ -25,6 +25,7 @@ interface FieldInterface
     const EMAIL        = 'email';
     const TEXT_AREA    = 'text.area';
     const IMAGE        = 'image';
+    const DATE         = 'date';
 
     /**
      * Field type list
@@ -40,6 +41,7 @@ interface FieldInterface
         Self::URL,
         Self::EMAIL,
         Self::TEXT_AREA,
+        Self::DATE,
         Self::IMAGE
     ];
 
