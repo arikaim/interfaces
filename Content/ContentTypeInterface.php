@@ -24,6 +24,27 @@ interface ContentTypeInterface
     public function getActionHandlers(): array;
     
     /**
+     * Get title fields
+     *
+     * @return array
+     */
+    public function getTitleFields(): array;
+    
+    /**
+     * Get searchable field names
+     *
+     * @return array
+     */
+    public function getSearchableFieldNames(): array;
+
+    /**
+     * Get field names
+     *
+     * @return array
+     */
+    public function getFieldNames(): array;
+
+    /**
      * Get content type fields
      *
      * @return array

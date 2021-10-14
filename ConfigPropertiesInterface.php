@@ -19,9 +19,10 @@ interface ConfigPropertiesInterface
     /**
      * Create config properties array
      *  
-     * @return void
+     * @param array|null $values 
+     * @return array
     */
-    public function createConfigProperties(): array;
+    public function createConfigProperties(?array $values = null): array;
 
     /**
      * Get config properties collection

@@ -61,9 +61,10 @@ interface ContentProviderInterface
      *
      * @param string|int|array $key  Id, Uuid or content name slug
      * @param string|null $contentType  Content type name
+     * @param string|array|null $keyFields
      * @return array|null
      */
-    public function getContent($key, ?string $contentType = null): ?array;
+    public function getContent($key, ?string $contentType = null, $keyFields = null): ?array;
 
     /**
      * Get content type
