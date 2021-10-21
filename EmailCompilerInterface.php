@@ -10,16 +10,16 @@
 namespace Arikaim\Core\Interfaces;
 
 /**
- * Compile email markup code interface
+ * Compile email html code
  */
 interface EmailCompilerInterface 
 {  
     /**
-     * Compile email markup code
+     * Compile email html code
      *
-     * @param string $code
-     * @param array $params
+     * @param string $htmlCode
+     * @param string $cssCode
      * @return string
      */
-    public function compile($code,array $params = []);
+    public function compile(string $htmlCode, string $cssCode): string;
 }

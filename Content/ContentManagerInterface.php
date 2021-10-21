@@ -45,9 +45,10 @@ interface ContentManagerInterface
      * Get content provider
      * 
      * @param string $name
+     * @param string|null $contentType
      * @return ContentProviderInterface|null
      */
-    public function provider(string $name): ?ContentProviderInterface;
+    public function provider(string $name, ?string $contentType = null): ?ContentProviderInterface;
 
     /**
      * Check if provider exists
