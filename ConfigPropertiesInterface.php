@@ -27,9 +27,10 @@ interface ConfigPropertiesInterface
     /**
      * Get config properties collection
      *
+     * @param array|null $config
      * @return Properties
      */
-    public function getConfigProperties(): Properties;
+    public function getConfigProperties(?array $config = null): Properties;
 
     /**
      * Init config properties

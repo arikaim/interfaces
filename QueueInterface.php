@@ -103,12 +103,20 @@ interface QueueInterface
     public function getRecuringJobs(?string $extension = null): ?array;
 
     /**
-     * Create job obj from jobs queue
+     * Create job obj
      *
-     * @param string|integer $name
+     * @param string $class
+     * @param string|null $name Job name
+     * @param string|null $extension
+     * @param array $params
      * @return JobInterface|null
      */
-    public function create($name): ?JobInterface;
+    public function create(
+        string $class, 
+        ?string $name = null, 
+        ?string $extension = null, 
+        array $params = []
+    ): ?JobInterface;
 
     /**
      * Delete jobs
