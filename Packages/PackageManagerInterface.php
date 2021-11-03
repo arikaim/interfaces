@@ -44,9 +44,9 @@ interface PackageManagerInterface
      * Install package
      *
      * @param string $name
-     * @return bool
+     * @return mixed
      */
-    public function installPackage(string $name): bool;
+    public function installPackage(string $name);
 
      /**
      * Run post install actions on package
