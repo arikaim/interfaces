@@ -22,6 +22,7 @@ interface ComponentInterface
     const COMPONENTS_LIBRARY  = 4; 
 
     // component types
+    const PAGE_COMPONENT_TYPE    = 'page';
     const ARIKAIM_COMPONENT_TYPE = 'arikaim';
     const VUE_COMPONENT_TYPE     = 'vue';
     const REACT_COMPONENT_TYPE   = 'react';
@@ -45,9 +46,10 @@ interface ComponentInterface
      *
      * @param string $name
      * @param string $type
+     * @param string|null $id
      * @return void
      */
-    public function addIncludedComponent(string $name, string $type);
+    public function addIncludedComponent(string $name, string $type, ?string $id = null);
     
     /**
      * Get included components
