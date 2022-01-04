@@ -144,10 +144,10 @@ interface ViewInterface
      * Render html component
      *
      * @param string $name
-     * @param array|null $params
      * @param string $language
+     * @param array|null $params
      * @param string|null $type
      * @return \Arikaim\Core\Interfaces\View\HtmlComponentInterface
     */
-    public function renderComponent(string $name, ?array $params = [], string $language, ?string $type = null);
+    public function renderComponent(string $name, string $language, ?array $params = [], ?string $type = null);
 }
