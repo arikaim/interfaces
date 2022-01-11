@@ -32,7 +32,7 @@ interface StorageInterface
      * @param string|null $fileSystemName
      * @return bool 
      */
-    public function write(string $path, $contents, $config = [], ?string $fileSystemName = null);
+    public function write(string $path, $contents, $config = [], ?string $fileSystemName = null): bool;
 
     /**
      * Read file
@@ -50,7 +50,7 @@ interface StorageInterface
      * @param string|null $fileSystemName
      * @return boolean
      */
-    public function delete(string $path, ?string $fileSystemName = null);
+    public function delete(string $path, ?string $fileSystemName = null): bool;
 
     /**
      * Rename files
@@ -60,7 +60,7 @@ interface StorageInterface
      * @param string|null $fileSystemName
      * @return boolean
      */
-    public function rename(string $from, string $to, ?string $fileSystemName = null);
+    public function rename(string $from, string $to, ?string $fileSystemName = null): bool;
 
     /**
      * Create directory in storage folder
@@ -69,7 +69,7 @@ interface StorageInterface
      * @param string|null $fileSystemName
      * @return boolean
      */
-    public function createDir(string $path, ?string $fileSystemName = null);
+    public function createDir(string $path, ?string $fileSystemName = null): bool;
 
     /**
      * Return true if file exist
@@ -78,7 +78,7 @@ interface StorageInterface
      * @param string|null $fileSystemName
      * @return boolean
     */
-    public function has(string $path, ?string $fileSystemName = null);
+    public function has(string $path, ?string $fileSystemName = null): bool;
 
     /**
      * Copy files
@@ -88,7 +88,7 @@ interface StorageInterface
      * @param string|null $fileSystemName
      * @return void
     */
-    public function copy(string $from, string $to, ?string $fileSystemName = null);
+    public function copy(string $from, string $to, ?string $fileSystemName = null): bool;
 
     /**
      * Delete directory in storage folder
@@ -97,5 +97,5 @@ interface StorageInterface
      * @param string|null $fileSystemName
      * @return boolean
      */
-    public function deleteDir(string $path, ?string $fileSystemName = null);
+    public function deleteDir(string $path, ?string $fileSystemName = null): bool;
 }
