@@ -61,14 +61,6 @@ interface AuthInterface extends AccessInterface
     public function resolveAuthType($type);
 
     /**
-     * Get auth name
-     *
-     * @param int $auth
-     * @return string
-    */
-    public function getAuthName($auth);
-
-    /**
      * Return true if user is logged
      *
      * @return boolean
