@@ -28,11 +28,11 @@ interface EventDispatcherInterface
     /**
      * Register event subscriber.
      *
-     * @param string $class
+     * @param object|string $subscriber Subscriber class or object ref
      * @param string|null $extension
      * @return bool
      */
-    public function registerSubscriber(string $class, ?string $extension): bool;
+    public function registerSubscriber($subscriber, ?string $extension): bool;
 
     /**
      * Add event to events db table.
