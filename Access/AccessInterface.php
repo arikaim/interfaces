@@ -78,7 +78,7 @@ interface AccessInterface
      * @param integer|null $authId
      * @return mixed
      */
-    public function getUserPermissions($authId = null);
+    public function getUserPermissions(?int $authId = null);
 
     /**
      * Add permission item.
