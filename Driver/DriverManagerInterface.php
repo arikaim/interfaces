@@ -20,9 +20,9 @@ interface DriverManagerInterface
      * @param string $name Driver name 
      * @param array $options  
      * @param array|null $config Drievr config properties
-     * @return DriverInterface|false
+     * @return DriverInterface|null
      */
-    public function create(string $name, array $options = [], ?array $config = null);
+    public function create(string $name, array $options = [], ?array $config = null): ?object;
 
      /**
       * Install driver
