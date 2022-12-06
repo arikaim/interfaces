@@ -20,5 +20,5 @@ interface PackageManagerFactoryInterface
      * @param string $packageType
      * @return PackageManagerInterface|null
      */
-    public function create(string $packageType);
+    public function create(string $packageType): ?object;
 }

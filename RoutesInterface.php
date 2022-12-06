@@ -63,7 +63,7 @@ interface RoutesInterface
      * @param integer   $status
      * @return boolean
      */
-    public function setRoutesStatus(array $filter = [], int $status): bool;
+    public function setRoutesStatus(array $filter, int $status): bool;
 
     /**
      * Add api route
@@ -85,7 +85,7 @@ interface RoutesInterface
         ?string $handlerMethod, 
         ?string $extension, 
         ?string $auth = null,
-        int $type
+        int $type = RoutesInterface::API
     ): bool;
 
     /**

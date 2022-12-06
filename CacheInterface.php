@@ -30,7 +30,7 @@ interface CacheInterface
      * @param int    $lifeTime In minutes
      * @return bool  true if data was successfully stored in the cache, false otherwise.
     */
-    public function save(string $id, $data,int $lifeTime = 0): bool;
+    public function save(string $id, $data, int $lifeTime = 0): bool;
 
     /**
      * Check if cache contains item
