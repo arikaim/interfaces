@@ -40,7 +40,7 @@ interface SubscriberRegistryInterface
      * @param integer|null $status
      * @return array
      */
-    public function getSubscribers(?string $eventName = null, ?string $extensionName, ?int $status = null): array;
+    public function getSubscribers(?string $eventName = null, ?string $extensionName = null, ?int $status = null): array;
 
     /**
      * Delete subscribers.

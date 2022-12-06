@@ -64,5 +64,5 @@ interface EventRegistryInterface
      * @param integer $status
      * @return boolean
      */
-    public function setEventsStatus(array $filter = [], int $status): bool;
+    public function setEventsStatus(array $filter, int $status): bool;
 }
