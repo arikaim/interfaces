@@ -34,7 +34,8 @@ interface DriverManagerInterface
       * @param string|null $description
       * @param string|null $version
       * @param array $config
-      * @param string|null $extension
+      * @param string|null $packageName
+      * @param string|null $packageType
       * @return boolean
     */
     public function install(
@@ -45,7 +46,8 @@ interface DriverManagerInterface
         ?string $description = null,
         ?string $version = null,
         array $config = [],
-        ?string $extension = null
+        ?string $packageName = null,
+        ?string $packageType = null
     ): bool;
 
    /**
