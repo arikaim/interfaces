@@ -33,6 +33,7 @@ interface ComponentInterface
     const EMPTY_COMPONENT_TYPE   = 'empty';
     const HTML_COMPONENT_TYPE    = 'html';
     const JS_COMPONENT_TYPE      = 'js';
+    const WIWGET_COMPONENT_TYPE  = 'widget';
 
     /**
      * Get options
