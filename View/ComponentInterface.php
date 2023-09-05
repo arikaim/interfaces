@@ -14,6 +14,10 @@ namespace Arikaim\Core\Interfaces\View;
  */
 interface ComponentInterface 
 {  
+    // render mode
+    const RENDER_MODE_VIEW = 0;
+    const RENDER_MODE_EDIT = 1;
+
     // component locations
     const UNKNOWN_COMPONENT   = 0;
     const TEMPLATE_COMPONENT  = 1; 
