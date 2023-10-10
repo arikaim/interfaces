@@ -22,6 +22,28 @@ interface JobInterface
     const STATUS_ERROR     = 10;
 
     /**
+     * Get hjob params
+     *
+     * @return array
+     */
+    public function getParams(): array;
+
+    /**
+     * Set job params
+     *
+     * @param array $params
+     * @return void
+     */
+    public function setParams(array $params): void;
+    
+    /**
+     * Get properties descriptor
+     *
+     * @return object|null
+     */
+    public function descriptor(): ?object;
+
+    /**
      * Set execution date
      *   
      * @param int|null $time  timestamp

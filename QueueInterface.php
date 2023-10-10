@@ -62,12 +62,20 @@ interface QueueInterface
     /**
      * Run job
      *
-     * @param string|int $name
+     * @param string|JobInterface $name
+     * @param string|null $extension
+     * @param array|null $params
      * @param Closure|null $onJobProgress
      * @param Closure|null $onJobProgressError
      * @return JobInterface|null
      */
-    public function run($name,?Closure $onJobProgress = null,?Closure $onJobProgressError = null): ?JobInterface;
+    public function run(
+        $name, 
+        ?array $params = null,
+        ?string $extension = null, 
+        ?Closure $onJobProgress = null, 
+        ?Closure $onJobProgressError = null
+    ): ?JobInterface;
     
     /**
      * Execute job
@@ -105,17 +113,16 @@ interface QueueInterface
     /**
      * Create job obj
      *
-     * @param string $class
-     * @param string|null $name Job name
+     * @param string $class  job class or name
+    
      * @param string|null $extension
-     * @param array $params
+     * @param array|null $params
      * @return JobInterface|null
      */
     public function create(
-        string $class, 
-        ?string $name = null, 
-        ?string $extension = null, 
-        array $params = []
+        string $class,     
+        ?array $params = null, 
+        ?string $extension = null       
     ): ?JobInterface;
 
     /**
