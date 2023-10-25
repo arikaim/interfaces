@@ -19,9 +19,9 @@ interface ScheduledJobInterface extends JobInterface
     /**
      * Return schduled time (timestamp)
      *
-     * @return integer
+     * @return integer|null
      */
-    public function getScheduleTime(): int;
+    public function getScheduleTime(): ?int;
 
     /**
      * Set schedule time
