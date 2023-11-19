@@ -90,9 +90,10 @@ interface QueueStorageInterface
     /**
      * Get all jobs due
      * 
+     * @param string|null $jobName
      * @return array|null
      */
-    public function getJobsDue(): ?array;
+    public function getJobsDue(?string $jobName = null): ?array;
 
     /**
      * Get next Job
