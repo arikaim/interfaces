@@ -70,9 +70,17 @@ interface HtmlPageInterface extends HtmlComponentInterface
      * @param array $params
      * @param string|null $language
      * @param string|null $type
+     * @param array $parent
+     * 
      * @return Arikaim\Core\Interfaces\View\HtmlComponentInterface;
     */
-    public function renderHtmlComponent(string $name, array $params = [], ?string $language = null, ?string $type = null);
+    public function renderHtmlComponent(
+        string $name, 
+        array $params = [], 
+        ?string $language = null, 
+        ?string $type = null,
+        array $parent = []
+    );
     
     /**
      * Get head properties

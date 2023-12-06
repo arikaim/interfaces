@@ -137,9 +137,17 @@ interface ViewInterface
      * @param string $language
      * @param string $type
      * @param int|null $renderMode
+     * @param array $parent
+     * 
      * @return Arikaim\Core\Interfaces\View\ComponentInterface
      */
-    public function createComponent(string $name, string $language, string $type, ?int $renderMode = null);
+    public function createComponent(
+        string $name, 
+        string $language, 
+        string $type, 
+        ?int $renderMode = null, 
+        array $parent = []
+    );
 
     /**
      * Render html component
@@ -149,6 +157,8 @@ interface ViewInterface
      * @param array|null $params
      * @param string|null $type
      * @param int|null $mode
+     * @param array $parent
+     * 
      * @return \Arikaim\Core\Interfaces\View\HtmlComponentInterface
     */
     public function renderComponent(
@@ -156,6 +166,7 @@ interface ViewInterface
         string $language, 
         ?array $params = [], 
         ?string $type = null,
-        ?int $mode = null
+        ?int $mode = null,
+        array $parent = []
     );
 }
