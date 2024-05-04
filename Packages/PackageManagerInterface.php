@@ -116,7 +116,7 @@ interface PackageManagerInterface
      * Get package repository
      *
      * @param string $packageName
-     * @return RepositoryInterface
+     * @return RepositoryInterface|null
     */
     public function getRepository(string $packageName);
 }
