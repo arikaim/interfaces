@@ -20,7 +20,7 @@ interface PackageManagerInterface
      * @param string $name
      * @return Arikaim\Core\Packages\Interfaces\PackageInterface
      */
-    public function createPackage(string $name);
+    public function createPackage(string $name, bool $loadProperties = true);
 
     /**
      * Find package
