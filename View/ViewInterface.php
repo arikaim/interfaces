@@ -15,14 +15,6 @@ namespace Arikaim\Core\Interfaces\View;
 interface ViewInterface
 {    
     /**
-     * Get service
-     *
-     * @param string $name
-     * @return mixed|null
-     */
-    public function getService(string $name);
-    
-    /**
      * Get all global vars
      *
      * @return array
@@ -94,13 +86,6 @@ interface ViewInterface
      * @return \Twig\Environment
      */
     public function getEnvironment();
-
-    /**
-     * Get cache
-     *
-     * @return CacheInterface
-     */
-    public function getCache();
 
     /**
      * Gte extensions path
