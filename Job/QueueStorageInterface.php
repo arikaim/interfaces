@@ -26,10 +26,10 @@ interface QueueStorageInterface
     /**
      * Update execution status
      *
-     * @param JobInterface $job
+     * @param object $job
      * @return bool
     */
-    public function updateExecutionStatus(JobInterface $job): bool;
+    public function updateExecutionStatus(object $job): bool;
 
     /**
      * Add job
