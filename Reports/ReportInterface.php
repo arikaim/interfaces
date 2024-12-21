@@ -41,4 +41,12 @@ interface ReportInterface
         ?int $month = null, 
         ?int $year = null
     ): array;
+
+    /**
+     * Set report data filter
+     *
+     * @param array $filter
+     * @return void
+     */
+    public function setReportDataFilter(array $filter): void;
 }
